@@ -1,0 +1,14 @@
+{
+  "name": "wwww.shenhua.love",
+  "version": "0.0.1",
+  "dependencies": {
+    "process": "^0.11.9",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "react-router": "^4.1.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
+  }
+}
