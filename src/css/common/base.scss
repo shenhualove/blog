@@ -103,7 +103,7 @@ body,html{
   font-family: "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 body{
-  background: url("../images/reception/loading.jpg") center center   no-repeat;
+  background: url("../../images/user/loading.jpg") center center   no-repeat;
   background-size: cover ;
   background-attachment:fixed;
 }
@@ -131,7 +131,11 @@ body{
 }
 #blogWrap{
   display: none;
+  &.block{
+    display: block;
+  }
 }
+
 
 /* 导航 */
 .top-nav{
