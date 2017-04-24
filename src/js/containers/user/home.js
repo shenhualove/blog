@@ -4,7 +4,7 @@
  * 首页
  */
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import * as actions from '../../actions/user/home';
 

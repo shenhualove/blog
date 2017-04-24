@@ -33,7 +33,7 @@ function Fetch(options){
         headers: {
             "Content-Type":options.contentType?options.contentType:"application/x-www-form-urlencoded"
         },//请求头部格式
-        body:options.data?options.data:'' //发送数据
+        body:options.data?sortKey(options.data):'' //发送数据
     }
 
     //初始化请求
@@ -73,6 +73,15 @@ function Fetch(options){
         alert("网络异常，请求错误");
     });
 
+}
+
+//对象转换为key=value&key=value
+function sortKey(data){
+    let tempData='';
+    for(let key in data){
+        tempData+=key+'='+data[key]+'&';
+    }
+    return tempData;
 }
 
 export default Fetch;

@@ -4,7 +4,7 @@
  * 路由首页框架
  */
 import React from 'react';
-import {Link,NavLink,Route} from 'react-router-dom';
+import {Link,IndexLink,Route} from 'react-router';
 import {connect} from 'react-redux';
 import * as actions from '../../actions/user';
 import Home from './home';
@@ -20,7 +20,7 @@ class IndexMain extends React.Component {
            return this.props.index.nav.map((val,key)=>{
                         if(key==3){
                             return(
-                                <NavLink to="/" className="logo"><img src={__uri("../../../images/user/logo.png")} /></NavLink>
+                                <IndexLink to="/" className="logo"><img src={__uri("../../../images/user/logo.png")} /></IndexLink>
                             )
                         }
                         return(
@@ -63,7 +63,8 @@ class IndexMain extends React.Component {
     }//组件加载后
 
     render(){
-
+            console.log(111111)
+            console.log(this.props);
             return (
                 <div id="loadeWrap">
                     <div className={"myPhoto animated fadeInUp "+(this.props.index.showView?"zoomOutUp":"")}>
@@ -72,15 +73,13 @@ class IndexMain extends React.Component {
                     <div id="blogWrap" className={"animated "+(this.props.index.showView?"block fadeIn":"")}>
                         <div className="wrap-r">
                             <div className="top-nav">
-                                <NavLink to="/" activeClassName="hover">首页</NavLink>
+                                <IndexLink to="/" activeClassName="hover">首页</IndexLink>
                                 {this.getNav()}
                             </div>
                             <div className="content-wrap">
                                 {/* 左侧 */}
                                 {/* 路由页面 */}
-                                <Route exact path="/" component={Home}/>
-                                <Route path="/list/:id" component={List}/>
-                                <Route path="/page/:id" component={Page}/>
+                                {this.props.children}
                                 {/* 右侧 */}
                                 <div className="content-right">
                                     {/* 关于我 */}
