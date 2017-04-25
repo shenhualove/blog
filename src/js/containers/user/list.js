@@ -40,7 +40,7 @@ class ListMain extends React.Component {
 
     componentDidMount(){
         console.log(this.props);
-        this.props._getList(1,this.props.list.page,this.props.list.pageSize);
+        this.props._getList(18,this.props.list.page,this.props.list.pageSize);
     }//组件加载后
 
     componentDidUpdate (prevProps) {

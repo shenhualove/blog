@@ -9,21 +9,22 @@ import * as actions from '../../actions/user/page';
 
 class PageMain extends React.Component {
 
-    getData(){
+    getData() {
         //获取数据
-        if(this.props.page.data.length>0){
-            return this.props.page.data.map((val,key)=>{
-                return(
+        if (this.props.page.data.length > 0) {
+            return this.props.page.data.map((val, key)=> {
+                return (
                     <div className="page-content">
                         <header>
                             <h1 className="article-title">{val.title}</h1>
+
                             <div className="meta">
                                 <span className="muted"><i className="fa fa-user"></i> {val.author}</span>
                                 <span className="muted"><i className="fa fa-clock-o"></i> {val.time}</span>
                                 <span className="muted"><i className="fa fa-eye"></i> {val.totalViews}浏览</span>
                             </div>
                         </header>
-                        <article  className="article-content">
+                        <article className="article-content">
 
                             <div dangerouslySetInnerHTML={{__html:val.content}}/>
 
@@ -34,8 +35,8 @@ class PageMain extends React.Component {
                     </div>
                 )
             });
-        }else{
-            return <article>暂无数据</article>
+        } else {
+            return <div className="page-content"><article className="article-content">暂无数据</article></div>
         }
     }
 

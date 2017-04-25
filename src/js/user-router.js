@@ -23,11 +23,11 @@ const store = createStore(
     )
 );
 
-const history = syncHistoryWithStore(browserHistory, store);
+const historys = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render((
     <Provider store={store}>
-        <Router history={history}>
+        <Router history={historys}>
             <Route  path="/"  component={Index}>
                 <IndexRoute  component={Home} />
                 <Route path="list/:id" component={List} />
