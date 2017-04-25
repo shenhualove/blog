@@ -41,7 +41,7 @@ class PageMain extends React.Component {
     }
 
     componentDidMount(){
-        this.props._getPage(1);
+        this.props._getPage(this.props.params.id);
     }//组件加载后
 
     render(){

@@ -6,6 +6,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
+import {indexHandle} from '../../actions/user';
 import * as actions from '../../actions/user/list';
 
 class ListMain extends React.Component {
@@ -39,15 +40,16 @@ class ListMain extends React.Component {
     }
 
     componentDidMount(){
-        console.log(this.props);
-        this.props._getList(18,this.props.list.page,this.props.list.pageSize);
+        this.props._indexHandle(this.props.params.id);
+        this.props._getList(this.props.params.id,this.props.list.page,this.props.list.pageSize);
     }//组件加载后
 
     componentDidUpdate (prevProps) {
         let oldId = prevProps.params.id;
         let newId = this.props.params.id;
         if (newId !== oldId){
-            this.props._getList(1,this.props.list.page,this.props.list.pageSize);
+            this.props._indexHandle(newId);
+            this.props._getList(newId,this.props.list.page,this.props.list.pageSize);
         }
     }//组件更新
 
@@ -72,6 +74,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         _getList:(id,page,pageSize)=>{
             dispatch(actions.getList(id,page,pageSize));
+        },
+        _indexHandle:(id)=>{
+            dispatch(indexHandle("GET_NAV_ID",id));
         }
     }
 }

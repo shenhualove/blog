@@ -54,7 +54,7 @@ fis.match('/src/js/utils/admin/**.js', {
     packTo: '/src/js/pkg/admin-utils.js'
 });//后台utils打包
 
-fis.match('/src/js/user-router.js', {
+fis.match('/src/js/{user-router,containers/user/**}.js', {
     packTo: '/src/js/pkg/user-router.js'
 });//前台路由文件打包
 

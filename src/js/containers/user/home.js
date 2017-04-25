@@ -6,6 +6,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
+import {indexHandle} from '../../actions/user';
 import * as actions from '../../actions/user/home';
 
 class HomeMain extends React.Component {
@@ -38,6 +39,7 @@ class HomeMain extends React.Component {
     }
 
     componentDidMount(){
+        this.props._indexHandle('');
         this.props._getNew(this.props.home.page,this.props.home.pageSize);
     }//组件加载后
 
@@ -98,6 +100,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         _getNew:(page,pageSize)=>{
             dispatch(actions.getNew(page,pageSize));
+        },
+        _indexHandle:(id)=>{
+            dispatch(indexHandle("GET_NAV_ID",id));
         }
     }
 }

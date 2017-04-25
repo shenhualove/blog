@@ -7,9 +7,7 @@ import React from 'react';
 import {Link,IndexLink,Route} from 'react-router';
 import {connect} from 'react-redux';
 import * as actions from '../../actions/user';
-import Home from './home';
-import List from './list';
-import Page from './page';
+
 
 class IndexMain extends React.Component {
 
@@ -24,7 +22,7 @@ class IndexMain extends React.Component {
                             )
                         }
                         return(
-                            <Link to={'/list/'+val.id}  activeClassName="hover">{val.title}</Link>
+                            <Link className={this.props.index.selectNav==val.id?"hover":''} to={'/list/'+val.id}  activeClassName="hover">{val.title}</Link>
                         )
                     })
                   }
@@ -63,8 +61,7 @@ class IndexMain extends React.Component {
     }//组件加载后
 
     render(){
-            console.log(111111)
-            console.log(this.props);
+
             return (
                 <div id="loadeWrap">
                     <div className={"myPhoto animated fadeInUp "+(this.props.index.showView?"zoomOutUp":"")}>
@@ -73,7 +70,7 @@ class IndexMain extends React.Component {
                     <div id="blogWrap" className={"animated "+(this.props.index.showView?"block fadeIn":"")}>
                         <div className="wrap-r">
                             <div className="top-nav">
-                                <IndexLink to="/" activeClassName="hover">首页</IndexLink>
+                                <IndexLink to="/" className={!this.props.index.selectNav?"hover":''} activeClassName="hover">首页</IndexLink>
                                 {this.getNav()}
                             </div>
                             <div className="content-wrap">
