@@ -9,6 +9,7 @@ fis.match('/src/(**)', {
     release: '/$1'
 })
 
+
 fis.match('/src/js/**.js', {
     parser: fis.plugin('babel-5.x', {
         sourceMaps: true
@@ -38,7 +39,7 @@ fis.match('{/src/js/mod.js,/node_modules/**.js}', {
     packTo: '/src/js/pkg/lib.js'
 });//打包react组件以,MOD.JS
 
-fis.match('/src/js/admin-router.js', {
+fis.match('/src/js/{admin-router,containers/admin/**,components/admin/**}.js', {
     packTo: '/src/js/pkg/admin-router.js'
 });//后台路由文件打包
 
@@ -54,7 +55,7 @@ fis.match('/src/js/utils/admin/**.js', {
     packTo: '/src/js/pkg/admin-utils.js'
 });//后台utils打包
 
-fis.match('/src/js/{user-router,containers/user/**}.js', {
+fis.match('/src/js/{user-router,containers/user/**,component/user/**}.js', {
     packTo: '/src/js/pkg/user-router.js'
 });//前台路由文件打包
 
@@ -114,6 +115,15 @@ fis.match('::package', {
 fis.media('debug').match('/src/**.{css,scss,js}', {
     optimizer: null
 })//dug模式
+
+fis.media('upload').match('/{src,node_modules}/**', {
+    domain:"//cdn.shxiongrui.com",
+    deploy: fis.plugin('qiniu', {
+        accessKey: 'wMaCsHD-91Sla0DJVaQ3wV9UZGYVmL6xA3mIrdep',  //Your qiniu Access Key
+        secretKey: 'iVQQp5amRiMpugLpY52v2sY8v44jncg7vOo4mNh3',  //Your qiniu Secret Key
+        bucket: 'shenhua'//qiniu dist
+    })
+})//上传模式
 
 
 fis.set('project.ignore', [

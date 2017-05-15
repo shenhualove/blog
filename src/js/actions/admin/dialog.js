@@ -1,17 +1,16 @@
 /**
- * Created by gaolei on 2017/4/12.
+ * Created by shenhua
  *
  * 弹窗组件
  */
-function dialogHandle(options){
+export function dialogHandle(options){
     return {
         type:"DIALOG_HANDLE",
         options
     }
 }
 
-function ajaxErrorLog(xhr, errorType, error,dispatch){
-
+export function ajaxErrorLog(xhr, errorType, error,dispatch){
     let options=null;
     if (errorType == "abort") { //无网络
         options={
@@ -35,18 +34,6 @@ function ajaxErrorLog(xhr, errorType, error,dispatch){
                     tipsType:"warning",
                     show:true,
                     content:"登录超时，请重新登录",
-                    success:function(){
-                        sessionStorage.clear();
-                        window.location.href = "/";
-                    }
-                }
-                break;
-            case 402:
-                options={
-                    type:"tips",
-                    tipsType:"warning",
-                    show:true,
-                    content:"您的帐号在其他设备登录，您被迫下线",
                     success:function(){
                         sessionStorage.clear();
                         window.location.href = "/";
@@ -95,10 +82,7 @@ function ajaxErrorLog(xhr, errorType, error,dispatch){
                 break;
         }
     }
-
-    if(options){
-        dispatch(dialogHandle(options))
+    if (options) {
+        dispatch (dialogHandle(options))
     }
 }
-
-export   {dialogHandle,ajaxErrorLog};

@@ -24,9 +24,7 @@ export function getList(id,page,pageSize){
                 pageSize:pageSize
             },
             success:function(data){
-                if(data.code===200000&&data.list.length>0){
-                    dispatch(listHandle("GET_LIST",data.list))
-                }
+                dispatch(listHandle("GET_LIST",data.list))
             }
         });
     }

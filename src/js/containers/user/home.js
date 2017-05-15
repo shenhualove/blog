@@ -48,39 +48,6 @@ class HomeMain extends React.Component {
         return (
 
                  <div className="content-left">
-                      <div className="hot-read">
-                          <h2>推荐集合</h2>
-                          <ul>
-                             <li>
-                                 <a href="#">
-                                     <img src="../../../images/reception/d8.jpg" alt="移动端界面设计之尺寸篇" data-bd-imgshare-binded="1" />
-                                     <h3>移动端布局单位之rem篇</h3>
-                                     <p class="muted">彻底弄懂移动端布局单位，完美自适应移动手机的分辨率，搞定设计MM的PSD~！...</p>
-                                 </a>
-                             </li>
-                              <li>
-                                  <a href="#">
-                                      <img src="../../../images/reception/d8.jpg" alt="移动端界面设计之尺寸篇" data-bd-imgshare-binded="1" />
-                                      <h3>JQUERY插件封装入门篇</h3>
-                                      <p class="muted">学了JQ，岂能不会封装插件，还怎么混，赶快跟哥一起来学如何封装，入门级必备~！...</p>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="#">
-                                      <img src="../../../images/reception/d8.jpg" alt="移动端界面设计之尺寸篇" data-bd-imgshare-binded="1" />
-                                      <h3>react入门开发篇</h3>
-                                      <p class="muted">在这个前端爆炸的年代，不会react还想涨薪！手把手教你入门react做个SPA项目~！...</p>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="#">
-                                      <img src="../../../images/reception/d8.jpg" alt="移动端界面设计之尺寸篇" data-bd-imgshare-binded="1" />
-                                      <h3>Node.js全栈开发入门篇</h3>
-                                      <p class="muted">只会前端远远不够，老司机贴身教你使用node.js+express+mysql搭建自己的博客...</p>
-                                  </a>
-                              </li>
-                          </ul>
-                      </div>
                       <div className="new-push">
                           <h2>最新发布</h2>
                           {this.getData()}
