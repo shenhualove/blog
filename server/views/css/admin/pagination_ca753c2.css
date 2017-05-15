@@ -1,0 +1,58 @@
+@charset "UTF-8";
+/*
+通用分页插件样式
+*/
+.pagination-wrap {
+  clear: both;
+  margin-top: 20px;
+}
+
+.pagination-wrap > .page-show-left {
+  float: right;
+}
+
+.pagination-wrap select {
+  width: 70px;
+  height: 26px;
+  line-height: 26px;
+  margin-right: 6px;
+}
+
+.pagination-wrap span {
+  cursor: pointer;
+  float: left;
+  padding: 3px 10px 3px 10px;
+  margin-right: 5px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  background-color: #FFF;
+  color: #666666;
+}
+
+.pagination-wrap span.disable-hover {
+  cursor: auto;
+  border: 1px solid #e7e7e7;
+  background-color: #FFF;
+  color: #DFDFDF;
+}
+
+.pagination-wrap span.curr {
+  border: 1px solid #61c351;
+  background: #effdec;
+  color: #4bba39;
+}
+
+.pagination-wrap span.nav:hover {
+  border: 1px solid #66d354;
+  background-color: #66d354;
+  color: #fff;
+}
+
+.pagination-wrap span.page-info {
+  float: left;
+  cursor: auto;
+  border: none;
+}

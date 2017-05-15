@@ -1,0 +1,62 @@
+
+.resource-manager-top{
+    height: 70px;
+    position: relative;
+    span{
+        position: absolute;
+        top:0;
+        left:10px;
+        font-size: 14px;
+        color: #333;
+        line-height: 70px;
+    }
+    p{
+        padding-left: 300px;
+        padding-top: 18px;
+        text-align: center;
+    }
+}
+.resource-manager-content{
+    border: 1px solid #e3e3e3;
+    position: relative;
+    .resource-tree{
+        width: 300px;
+        padding-top: 10px;
+        background: #f0f5fb;
+        position: absolute;
+        top:0;
+        left: 0;
+        right:0;
+        bottom: 0;
+        input{
+            background: red;
+        }
+    }
+    .resource-right{
+        position: absolute;
+        top:0;
+        left: 300px;
+        right:0;
+        bottom: 0;
+        h3{
+            font-size: 18px;
+            text-align: center;
+            line-height:60px;
+            background:#4db383;
+            color:#fff;
+        }
+        .manager-list{
+            padding: 30px 20px 0;
+            span{
+                font-size: 14px;
+                color: #333;
+                line-height: 40px;
+                margin-right: 20px;
+                input{
+                    vertical-align: middle;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}

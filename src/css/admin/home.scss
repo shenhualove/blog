@@ -1,169 +1,37 @@
-.pading30{
-    padding:0 30px 30px;
-    background: #fff;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;   
-    -moz-border-bottom-left-radius: 15px;
-    -moz-border-bottom-right-radius: 15px;  
-    -webkit-border-bottom-left-radius: 15px;
-    -webkit-border-bottom-right-radius: 15px;
-}
-.border-r{
-    border-right: 1px solid #dadada;
-}
-.pad-r75{
-    padding-right: 75px;
-}
-.pad-l75{
-    padding-left: 75px;
-}
-.part{
-    margin-left: auto;
-    margin-right: auto;
-}
-.homeTitle{
-    height: 58px;
-    font-size: 24px;
-    line-height: 58px;
-    color: #fff;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    -moz-border-top-left-radius: 15px;
-    -moz-border-top-right-radius: 15px;
-    -webkit-border-top-left-radius: 15px;
-    -webkit-border-top-right-radius: 15px;
-    padding: 0 30px;
-    margin-bottom: 0;
-}
-
-.bank-business.homeTitle{
-    background: #0088df;
-}
-.bank-business.homeTitle.red{
-    background: #f64d4c;
-}
-.bank-number{
-    padding-bottom: 30px;
-    padding-top: 30px;
-    border-bottom: 1px dashed #dadada;
-    a{
-        font-size: 20px;
-        line-height: 35px;
-        color: #3c8dbc;
-        margin-right: 8%;
-    }
-    a:last-child{
-        margin-right:0;
-    }
-}
-.achi-wrap{
-    height: 74px;
-    line-height: 74px;
-    span,i{
-        font-size: 22px;;
-        color: #0088DF;
-        vertical-align: baseline;
-        em{
-            font-size: 18px;
-            color: #999;
-            margin-left: 20px;
-            font-style: normal;
+.home-contioner{
+    width:100%;
+    height:100%;
+    /*padding-top:60px;*/
+    /*margin-top:-60px;*/
+    background-color: #f1f2f4;
+    /*padding-left: 20px;*/
+    /*padding-right: 20px;*/
+    .contenter{
+        width:100%;
+        height: 96%;
+        margin-top: 20px;
+        background-color: #fff;
+        border:1px solid #e3e3e3;
+        border-radius: 5px;
+        position: relative;
+        .drawBar{
+            width:100%;
+            height:90%;
+            padding-left: 50px;
+            margin-top:36px;
         }
     }
-    .red{
-        font-size: 22px;;
-        color: #f64d4c;
-    }    
-}
-.achi-text{
-    h4{
-        font-size: 20px;
-        line-height: 30px;
-        font-weight: bold;
-        color: #666;
-    }
-    p{
-       font-size: 18px;
-    line-height: 30px;
-    color: #999; 
-    }
-}
-.business-ul{
-    li{
-        float: left;
-        width: 50%;
-        .item{
-            font-size: 24px;
-            font-weight:bold;    
-        }
-        span{
-            font-size: 20px;
-            color: #666;
-            line-height: 55px;
-        }
-        b{
-            
-            color: #333;
-        }
-        i{
-            font-size: 32px;
-            color: #333;
-            font-weight:normal;
-        }
-    }
-    .col-xs-4 {
-        width: 33.33333333%;
-    }
-}
-#insertDiv{
-    padding: 10px;
-    color: #333;
-    font-size: 24px;
-}
-#noneDate{
-    padding: 10px;
-    color: #333;
-    font-size: 24px;    
-}
-.bank-dcont table{
-    width: 100%;
-    border-collapse: 0;
-}
-.bank-dcont table th{
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-.bank-dcont table tbody tr:hover{
-    background: #f1f1f1;
-}
-.bank-dcont table td{
-    padding: 10px;
-    border: 1px solid #ccc;
-    text-align: center;
-}
-.bank-dcont table tbody tr:nth-child(2n){
-    background: none;
-}
-.bod-b-das{
-    border-bottom:1px dashed #dadada;
-    padding-bottom: 20px;
-}
-.more,.more:hover{
-    font-size: 20px;
-    line-height: 30px;
-    color: #3c8dbc;
-}
-.open-date{
-    li{
-        width: 100%;
-        list-style: disc inside;
-        font-size: 20px;
-        color: #999;
-        line-height: 30px;
-        padding: 20px 48px 50px;
-        span{
-            margin-right: 40px;
-            font-size: 20px;
+    .remarks{
+        position: absolute;
+        left: 85px;
+        bottom: 20px;
+        p{
+            font-size: 12px;
+            color: #333333;
+            span{
+                width: 20px;
+                display: inline-block;
+            }
         }
     }
 }

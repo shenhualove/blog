@@ -1,0 +1,107 @@
+.add-role-content {
+  background-color: #F0F5FB;
+}
+
+.add-role-content .left-content {
+  width: 25%;
+  height: 100%;
+  float: left;
+  background-color: #F0F5FB;
+}
+
+.add-role-content .right-content {
+  width: 75%;
+  float: right;
+  height: 100%;
+  padding-top: 30px;
+  background: #fff;
+}
+
+.add-role-content .right-content p {
+  margin-top: 40px;
+}
+
+.add-role-content .right-content p .lable {
+  font-size: 14px;
+  color: #666;
+  margin-right: 20px;
+  width: 20%;
+  display: inline-block;
+  text-align: right;
+}
+
+.add-role-content .right-content p .ff {
+  float: left;
+}
+
+.add-role-content .right-content p .w500 {
+  width: 70%;
+}
+
+.add-role-content .right-content p textarea {
+  width: 200px;
+  height: 150px;
+  font-size: 14px;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 5px;
+  padding: 5px;
+}
+
+.add-role-content .right-content p .btn {
+  line-height: 30px;
+  padding: 0 16px;
+  text-align: center;
+  color: #fff;
+  background: #66d354;
+  font-size: 14px;
+  margin-right: 20px;
+  display: inline-block;
+  border-radius: 5px;
+  float: right;
+  cursor: pointer;
+}
+
+.add-role-content .right-content p .btn:hover {
+  background: #53c242;
+}
+
+.add-role-content .right-content .mr30 {
+  margin-right: 30px;
+}
+
+.add-role-content .right-content .table-content {
+  margin-top: 40px;
+}
+
+.add-role-content .right-content .table-content .lable {
+  font-size: 14px;
+  color: #666;
+  margin-right: 20px;
+  width: 20%;
+  display: inline-block;
+  text-align: right;
+}
+
+.add-role-content .right-content .table-content .ff {
+  float: left;
+}
+
+.add-role-content .right-content .table-content .w500 {
+  width: 70%;
+}
+
+.add-role-content .right-content .table-content .table {
+  overflow-y: scroll;
+  width: 70%;
+  max-height: 200px;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.add-role-content .right-content .table-content .table table {
+  width: 100%;
+  border-right: 1px solid #dcdcdc;
+}

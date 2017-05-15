@@ -1,0 +1,93 @@
+.add-role-content{
+     background-color: #F0F5FB;
+    .left-content{
+        width:25%;
+        height:100%;
+        float: left;
+        background-color: #F0F5FB;
+    }
+    .right-content{
+        width:75%;
+        float: right;
+        height: 100%;
+        padding-top:30px;
+        background: #fff;
+        p{
+            margin-top: 40px;
+            .lable{
+                font-size: 14px;
+                color: #666;
+                margin-right: 20px;
+                width: 20%;
+                display: inline-block;
+                text-align: right;
+            }
+            .ff{
+                float: left;
+            }
+            .w500{
+                width:70%;
+            }
+            textarea{
+                width: 200px;
+                height: 150px;
+                font-size: 14px;
+                color: #555;
+                background-color: #fff;
+                background-image: none;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                margin-left: 5px;
+                padding: 5px;
+            }
+            .btn{
+                line-height: 30px;
+                padding:0 16px;
+                text-align: center;
+                color: #fff;
+                background: #66d354;
+                font-size: 14px;
+                margin-right: 20px;
+                display: inline-block;
+                border-radius: 5px;
+                float: right;
+                cursor: pointer;
+                &:hover{
+                    background: #53c242;
+                }
+            }
+        }
+        .mr30{
+            margin-right: 30px;
+        }
+        .table-content{
+            margin-top: 40px;
+            .lable{
+                font-size: 14px;
+                color: #666;
+                margin-right: 20px;
+                width: 20%;
+                display: inline-block;
+                text-align: right;
+            }
+            .ff{
+                float: left;
+            }
+            .w500{
+                width:70%;
+            }
+            .table{
+                overflow-y: scroll;
+                width: 70%;
+                max-height: 200px;
+                border-bottom: 1px solid #dcdcdc;
+                table{
+                    width:100%;
+                    border-right: 1px solid #dcdcdc;
+                }
+            }
+            
+        }
+        
+    }
+}

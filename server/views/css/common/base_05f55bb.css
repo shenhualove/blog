@@ -1,0 +1,196 @@
+@charset "UTF-8";
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+:focus {
+  outline: 1;
+}
+
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+nav, ul, li {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+}
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  font-family: "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+body {
+  background: url("/images/user/loading_1ba2744.jpg") center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#loadeWrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#loadeWrap .myPhoto {
+  width: 128px;
+  height: 128px;
+  position: absolute;
+  z-index: 99;
+  left: 50%;
+  top: 50%;
+  margin-left: -64px;
+  margin-top: -64px;
+}
+
+#loadeWrap .myPhoto img {
+  width: 120px;
+  height: 120px;
+  border: 4px solid #2bb7c0;
+  border-radius: 64px;
+  -webkit-box-shadow: 0 0 25px #2bb7c0;
+}
+
+#blogWrap {
+  display: none;
+}
+
+#blogWrap.block {
+  display: block;
+}
+
+/* 导航 */
+.top-nav {
+  background: #25a8b9;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.top-nav a {
+  font-size: 16px;
+  display: block;
+  padding: 15px 0;
+  color: white;
+  flex: 1;
+  text-align: center;
+}
+
+.top-nav a.logo, .top-nav a.logo:hover {
+  padding: 0px;
+  background: none;
+  border-radius: 0;
+}
+
+.top-nav a:hover, .top-nav a.hover {
+  background: #00bcd4;
+  border-radius: 8px;
+}
+
+.top-nav a img {
+  height: 88px;
+}
+
+footer {
+  clear: both;
+  color: #ddd;
+  width: 100%;
+  background: #414141;
+  padding: 20px 0;
+}
+
+footer p {
+  text-align: center;
+  line-height: 20px;
+}

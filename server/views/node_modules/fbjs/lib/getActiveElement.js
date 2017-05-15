@@ -1,0 +1,1 @@
+define("node_modules/fbjs/lib/getActiveElement",function(e,t,n){"use strict";function d(e){if(e=e||("undefined"!=typeof document?document:void 0),"undefined"==typeof e)return null;try{return e.activeElement||e.body}catch(t){return e.body}}n.exports=d});

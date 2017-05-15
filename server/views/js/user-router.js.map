@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "sources": [
+        "/src/js/user-router.js"
+    ],
+    "names": [],
+    "mappings": ";;;;;;;;;qBAKkB,OAAO;;;;wBACJ,WAAW;;;;2BACqB,cAAc;;qBACvB,OAAO;;0BAC1B,aAAa;;0BACV,aAAa;;;;gCACN,oBAAoB;;iCACtC,uBAAuB;;;;8BACtB,mBAAmB;;;;kCACpB,wBAAwB;;;;kCACxB,wBAAwB;;;;kCACxB,wBAAwB;;;;AAEzC,IAAM,KAAK,GAAG,wDAEV,oDAEC,CACJ,CAAC;;AAEF,IAAM,QAAQ,GAAG,yEAAqC,KAAK,CAAC,CAAC;;AAE7D,sBAAS,MAAM,CACX;;MAAU,KAAK,EAAE,KAAK,AAAC;IACnB;;UAAQ,OAAO,EAAE,QAAQ,AAAC;QACtB;;cAAQ,IAAI,EAAC,GAAG,EAAE,SAAS,6BAAQ;YAC/B,4DAAa,SAAS,iCAAO,GAAG;YAChC,uDAAO,IAAI,EAAC,UAAU,EAAC,SAAS,iCAAO,GAAG;YAC1C,uDAAO,IAAI,EAAC,UAAU,EAAC,SAAS,iCAAO,GAAG;SACtC;KACH;CACF,EACb,QAAQ,CAAC,cAAc,CAAC,QAAQ,CAAC,CAAC,CAAC",
+    "file": "/src/js/user-router.js",
+    "sourcesContent": [
+        "/**\n * Created by apple on 17/4/19.\n *\n * 前台应用路由\n */\nimport React from 'react';\nimport ReactDOM from 'react-dom';\nimport {IndexRoute,Route,Router,browserHistory} from 'react-router';\nimport { createStore,applyMiddleware } from 'redux';\nimport { Provider } from 'react-redux';\nimport thunkMiddleware from 'redux-thunk';\nimport {syncHistoryWithStore} from 'react-router-redux';\nimport blog from './reducers/user/index';\nimport Index from './containers/user';\nimport Home from './containers/user/home';\nimport List from './containers/user/list';\nimport Page from './containers/user/page';\n\nconst store = createStore(\n    blog,\n    applyMiddleware(\n        thunkMiddleware\n    )\n);\n\nconst historys = syncHistoryWithStore(browserHistory, store);\n\nReactDOM.render((\n    <Provider store={store}>\n        <Router history={historys}>\n            <Route  path=\"/\"  component={Index}>\n                <IndexRoute  component={Home} />\n                <Route path=\"list/:id\" component={List} />\n                <Route path=\"page/:id\" component={Page} />\n            </Route>\n        </Router>\n    </Provider>\n),document.getElementById(\"myBlog\"));\n"
+    ]
+}

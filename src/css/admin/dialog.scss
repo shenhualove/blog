@@ -1,0 +1,172 @@
+/*弹窗样式开始*/
+html,body{
+    height: 100%;
+    .new-dialog-bg{
+        position: absolute;
+        z-index: 9999;
+        background: rgba(0,0,0,.3);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y: auto;
+        .dialog-wrap{
+            background: #fff;
+            border-radius: 5px;
+            position: absolute;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+            margin:auto;
+            overflow: hidden;
+           
+            &.type-mesg{
+                width: 300px;
+                .dialog-body{
+                    height: 220px;
+                }
+            }
+            &.type-cont{
+                width: 700px;
+                .dialog-body{
+                    height: 400px;  
+                    overflow-y: auto;
+                }
+                .dialog-box-wrap{
+                    height: 260px;
+                    overflow: hidden;
+                    position: absolute;
+
+                    z-index: 2;
+                    box-shadow: 1px 1px 11px rgba(0,0,0,.5);
+                    .dialog-body{
+                        height: 220px;
+                        overflow: hidden;
+                    }
+                    .dialog-bottom{
+                        bottom: 30px;
+                    }
+                }
+            }
+            .dialog-header{
+                height: 40px;
+                &.dialog-title{
+                    background: #80c26a;
+                    line-height: 40px;
+                    font-size: 18px;
+                    color: #fff;
+                    padding-left: 30px;
+                    .colse{
+                        top: 5px;
+                        right: 5px;
+                        color: #fff;
+                    }
+                }
+                .close{
+                    width: 30px;
+                    height: 30px;
+                    color: #bfbfbf;
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    text-align: center;
+                    line-height: 30px;
+                    cursor: pointer;
+                    i{
+                        font-size: 22px;
+                        font-weight: bold;
+                    }
+                    &.colse-fff{
+                        top: 5px;
+                        right: 5px;
+                        color: #fff;
+                    }
+                }
+            }
+            .dialog-body{
+                padding: 20px 30px;
+                .msg-type{
+                    text-align: center;
+                    padding-top: 100px;
+                    background-position: center top;
+                    background-repeat: no-repeat;
+                    font-size: 16px;
+                    color: #666;
+                    margin-top: -20px;
+                    background-size: 70px;
+                    &.success{
+                        background-image: url(../images/public/icon_success.png);
+                    }
+                    &.fail{
+                        background-image: url(../images/public/icon_fail.png);
+                    }
+                    &.doubt{
+                        background-image: url(../images/public/icon_doubt.png);
+                    }
+                    &.warning{
+                        background-image: url(../images/public/icon_warning.png);
+                    }
+                }
+            }
+            .dialog-foot{
+                width: 100%;
+                position: absolute;
+                bottom: 42px;
+                left: 0;
+                text-align: center;
+                &.mb30{
+                    bottom: 30px;
+                }
+                button{
+                    width: 150px;
+                    height: 30px;
+                    line-height: 29px;
+                    text-align: center;
+                    border-radius: 5px;
+                    margin-left: 25px;
+                    margin-right: 25px;
+                    display: inline-block;
+                    font-size: 14px;
+                    color: #fff;
+                    padding: 0;
+                    &.btn-close{
+                        background: #efad4d;
+                        border-color: #efad4d;
+                    }
+                    &.btn-submit{
+                        background: #4bba39;
+                        border-color: #4bba39;
+                    }
+                }
+            }
+            
+        }
+        .dialog-loading{
+            width: 100%;
+            height: 100%;
+            .dialog-loading-icon{                
+                position: absolute;
+                top: 0;
+                left:0;
+                right:0;
+                bottom:0;
+                margin:auto;
+                width:200px;
+                height: 200px;  
+                padding-top: 10px;
+                display: table;              
+                background: url(../images/public/loading.gif) center center no-repeat;
+                .dialog-loading-content{
+                        text-align: center;
+                        vertical-align: middle;
+                        display: table-cell;
+                        color: #27f060;
+                }
+            }
+            
+        }
+    }
+
+}
+

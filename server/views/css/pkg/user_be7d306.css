@@ -1,0 +1,580 @@
+/*!/src/css/user/index.scss*/
+
+/*  首页样式  */
+.content-wrap {
+  margin: 0px auto 20px auto;
+  width: 100%;
+  max-width: 1200px;
+  padding-top: 100px;
+}
+
+.content-wrap:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.content-wrap .content-left {
+  float: left;
+  width: 880px;
+}
+
+.content-wrap .content-left .hot-read {
+  margin-bottom: 20px;
+  background: #f1f1f1;
+  overflow: hidden;
+}
+
+.content-wrap .content-left .hot-read ul {
+  margin-right: -2px;
+}
+
+.content-wrap .content-left .hot-read ul li {
+  width: 50%;
+  float: left;
+  margin-bottom: 1px;
+  display: list-item;
+}
+
+.content-wrap .content-left .hot-read ul li a {
+  color: #555;
+  display: block;
+  background-color: #fff;
+  margin-right: 1px;
+  padding: 5px 20px 2px 140px;
+}
+
+.content-wrap .content-left .hot-read ul li a:hover {
+  background: #fafff8;
+}
+
+.content-wrap .content-left .hot-read ul li a img {
+  float: left;
+  margin: 8px 0 0 -120px;
+  width: 110px;
+  height: 80px;
+}
+
+.content-wrap .content-left .hot-read ul li a h3 {
+  margin: 10px 0 0 0;
+  font-weight: bold;
+  height: 25px;
+  overflow: hidden;
+}
+
+.content-wrap .content-left .hot-read ul li a h3:hover {
+  color: #56a5ca;
+}
+
+.content-wrap .content-left .hot-read ul li a p {
+  height: 55px;
+  color: #999;
+  margin-bottom: 10px;
+  line-height: 20px;
+}
+
+.content-wrap .content-left .muted {
+  margin-right: 20px;
+}
+
+.content-wrap .content-left .muted .fa {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-bottom: -2px;
+}
+
+.content-wrap .content-left .muted .fa-user {
+  background: url("/images/user/by_c84de75.png") no-repeat;
+  background-size: contain;
+}
+
+.content-wrap .content-left .muted .fa-clock-o {
+  background: url("/images/user/time_ee63d5b.png") no-repeat;
+  background-size: contain;
+}
+
+.content-wrap .content-left .muted .fa-eye {
+  background: url("/images/user/look_6442322.png") no-repeat;
+  background-size: contain;
+}
+
+.content-wrap .content-left .muted .fa-comment {
+  background: url("/images/user/talk_1d0ff94.png") no-repeat;
+  background-size: contain;
+}
+
+.content-wrap .content-left .muted a {
+  color: #999;
+}
+
+.content-wrap .content-left .new-push article {
+  background-color: #fff;
+  padding: 20px 20px 20px 256px;
+  border-bottom: 1px solid #f1f1f1;
+  position: relative;
+  border-left: solid 4px #fff;
+  overflow: hidden;
+}
+
+.content-wrap .content-left .new-push article:hover {
+  border-left-color: #4eb4e2;
+  padding-left: 260px;
+  margin-left: -4px;
+  background-color: #fafff8;
+}
+
+.content-wrap .content-left .new-push article .focus {
+  float: left;
+  width: 220px;
+  margin-left: -240px;
+  margin-top: 0px;
+  text-align: center;
+  position: relative;
+}
+
+.content-wrap .content-left .new-push article .focus a {
+  color: #555;
+}
+
+.content-wrap .content-left .new-push article .focus a img {
+  width: 220px;
+  height: 150px;
+  display: block;
+}
+
+.content-wrap .content-left .new-push article header {
+  margin: 5px 40px 5px 0;
+}
+
+.content-wrap .content-left .new-push article header h3 {
+  display: inline;
+  font-size: 16px;
+  margin: 0;
+  font-weight: bold;
+  position: relative;
+  top: 1px;
+  line-height: 25px;
+}
+
+.content-wrap .content-left .new-push article header h3 a {
+  color: #555;
+}
+
+.content-wrap .content-left .new-push article header h3 a:hover, .content-wrap .content-left .new-push article header h3 a:focus {
+  color: #56a5ca;
+  text-decoration: none;
+}
+
+.content-wrap .content-left .new-push article .note {
+  color: #888;
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+.content-wrap .hot-read, .content-wrap .new-push {
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+.content-wrap .hot-read h2, .content-wrap .new-push h2 {
+  line-height: 20px;
+  padding: 6px 20px;
+  font-size: 16px;
+  background-color: #F7F7F7;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.content-wrap .hot-read img, .content-wrap .new-push img {
+  max-width: 100%;
+  border-radius: 5px;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+}
+
+.content-wrap .content-right {
+  width: 300px;
+  float: right;
+}
+
+.content-wrap .content-right .about-my, .content-wrap .content-right .study-links, .content-wrap .content-right .friend-links {
+  min-height: 100px;
+  background: white;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.content-wrap .content-right .about-my:after, .content-wrap .content-right .study-links:after, .content-wrap .content-right .friend-links:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+
+.content-wrap .content-right .about-my h4, .content-wrap .content-right .study-links h4, .content-wrap .content-right .friend-links h4 {
+  line-height: 20px;
+  padding: 6px 20px;
+  font-size: 16px;
+  background-color: #F7F7F7;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.content-wrap .content-right .study-links ul, .content-wrap .content-right .friend-links ul {
+  padding: 10px 0 10px 20px;
+  overflow: hidden;
+}
+
+.content-wrap .content-right .study-links ul li, .content-wrap .content-right .friend-links ul li {
+  float: left;
+  width: 50%;
+  line-height: 30px;
+}
+
+.content-wrap .content-right .study-links ul li a, .content-wrap .content-right .friend-links ul li a {
+  color: #555;
+}
+
+.content-wrap .content-right .study-links ul li a:hover, .content-wrap .content-right .friend-links ul li a:hover {
+  color: #56a5ca;
+}
+
+.content-wrap .content-right .about-my div {
+  margin-top: 20px;
+}
+
+.content-wrap .content-right .about-my img {
+  background: #0088DF;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  width: 160px;
+  height: 160px;
+}
+
+.content-wrap .content-right .about-my p {
+  line-height: 24px;
+  padding: 20px;
+}
+
+/*!/src/css/user/list.scss*/
+
+/*  列表样式  */
+.content-wrap .column-list h2 {
+  padding: 12px 20px;
+}
+
+/*!/src/css/user/page.scss*/
+
+/*  内容页面样式  */
+.page-content > header {
+  padding: 10px 30px;
+  background: #F7F7F7;
+}
+
+.page-content > header h1 {
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+
+.page-content .article-content {
+  background: white;
+  margin-bottom: 20px;
+  padding: 20px;
+  min-height: 300px;
+  /* Code below this line is copyright Twitter Inc. */
+  /* override default chrome & firefox settings */
+  /* grey out placeholders */
+  /* buttons */
+}
+
+.page-content .article-content h1, .page-content .article-content h2, .page-content .article-content h3, .page-content .article-content h4 {
+  font-weight: 400;
+}
+
+.page-content .article-content h1, .page-content .article-content h2, .page-content .article-content h3, .page-content .article-content h4, .page-content .article-content h5, .page-content .article-content p {
+  margin-bottom: 24px;
+  padding: 0;
+}
+
+.page-content .article-content h1 {
+  font-size: 38px;
+}
+
+.page-content .article-content h2 {
+  font-size: 26px;
+  margin: 24px 0 6px;
+}
+
+.page-content .article-content h3 {
+  font-size: 20px;
+}
+
+.page-content .article-content h4 {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.page-content .article-content h5 {
+  font-size: 16px;
+}
+
+.page-content .article-content h6 {
+  margin-bottom: 10px;
+}
+
+.page-content .article-content a {
+  color: #61BFC1;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  vertical-align: baseline;
+}
+
+.page-content .article-content a:hover {
+  text-decoration: underline;
+}
+
+.page-content .article-content a:visited {
+  color: #466B6C;
+}
+
+.page-content .article-content ul, .page-content .article-content ol {
+  padding: 0;
+  margin: 0;
+}
+
+.page-content .article-content li {
+  line-height: 24px;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.page-content .article-content li ul, .page-content .article-content li ul {
+  margin-left: 24px;
+}
+
+.page-content .article-content p, .page-content .article-content ul, .page-content .article-content ol {
+  font-size: 14px;
+  line-height: 24px;
+  list-style: disc;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.page-content .article-content pre {
+  padding: 10px 24px;
+  background: #f5f5f5;
+  white-space: pre-wrap;
+  margin-bottom: 20px;
+}
+
+.page-content .article-content code {
+  font-family: Consolas, Monaco, Andale Mono, monospace;
+  line-height: 1.5;
+  font-size: 14px;
+  color: #367fa9;
+}
+
+.page-content .article-content aside {
+  display: block;
+  float: right;
+  width: 390px;
+}
+
+.page-content .article-content blockquote {
+  border-left: .5em solid #eee;
+  padding: 0 2em;
+  margin-left: 0;
+}
+
+.page-content .article-content blockquote cite {
+  font-size: 14px;
+  line-height: 20px;
+  color: #bfbfbf;
+}
+
+.page-content .article-content blockquote cite:before {
+  content: '\2014 \00A0';
+}
+
+.page-content .article-content blockquote p {
+  color: #666;
+}
+
+.page-content .article-content hr {
+  text-align: left;
+  margin: 0 auto 0 0;
+  color: #999;
+}
+
+.page-content .article-content button,
+.page-content .article-content input,
+.page-content .article-content select,
+.page-content .article-content textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+.page-content .article-content button, .page-content .article-content input {
+  line-height: normal;
+  *overflow: visible;
+}
+
+.page-content .article-content button::-moz-focus-inner, .page-content .article-content input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.page-content .article-content button,
+.page-content .article-content input[type="button"],
+.page-content .article-content input[type="reset"],
+.page-content .article-content input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+.page-content .article-content input[type=checkbox], .page-content .article-content input[type=radio] {
+  cursor: pointer;
+}
+
+.page-content .article-content input:not([type="image"]), .page-content .article-content textarea {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.page-content .article-content input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.page-content .article-content input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.page-content .article-content label,
+.page-content .article-content input,
+.page-content .article-content select,
+.page-content .article-content textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: normal;
+  margin-bottom: 18px;
+}
+
+.page-content .article-content input[type=checkbox], .page-content .article-content input[type=radio] {
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.page-content .article-content input[type=text],
+.page-content .article-content input[type=password],
+.page-content .article-content textarea,
+.page-content .article-content select {
+  display: inline-block;
+  width: 210px;
+  padding: 4px;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  height: 18px;
+  color: #808080;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.page-content .article-content select, .page-content .article-content input[type=file] {
+  height: 27px;
+  line-height: 27px;
+}
+
+.page-content .article-content textarea {
+  height: auto;
+}
+
+.page-content .article-content :-moz-placeholder {
+  color: #bfbfbf;
+}
+
+.page-content .article-content ::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+.page-content .article-content input[type=text],
+.page-content .article-content input[type=password],
+.page-content .article-content select,
+.page-content .article-content textarea {
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.page-content .article-content input[type=text]:focus, .page-content .article-content input[type=password]:focus, .page-content .article-content textarea:focus {
+  outline: none;
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+.page-content .article-content button {
+  display: inline-block;
+  padding: 4px 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  background-color: #0064cd;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));
+  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));
+  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -o-linear-gradient(top, #049cdb, #0064cd);
+  background-image: linear-gradient(top, #049cdb, #0064cd);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid #004b9a;
+  border-bottom-color: #003f81;
+  -webkit-transition: 0.1s linear all;
+  -moz-transition: 0.1s linear all;
+  transition: 0.1s linear all;
+  border-color: #0064cd #0064cd #003f81;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+
+.page-content .article-content button:hover {
+  color: #fff;
+  background-position: 0 -15px;
+  text-decoration: none;
+}
+
+.page-content .article-content button:active {
+  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.page-content .article-content button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}

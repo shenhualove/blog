@@ -2,9 +2,140 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>323</title>
+    <title>神话博客后台管理系统</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" href="/css/pkg/admin_85fec5e.css" />
 </head>
 <body>
-myadmin
+<div id="container"></div>
+<script src="/js/pkg/lib_57124f1.js"></script>
+<script type="text/javascript">/*resourcemap*/
+require.resourceMap({
+  "res": {
+    "src/js/containers/admin/home/index": {
+      "url": "/js/containers/admin/home/index_1cade45.js",
+      "type": "js"
+    },
+    "src/js/actions/user/index": {
+      "url": "/js/actions/user/index_e2ff16d.js",
+      "type": "js",
+      "pkg": "p6"
+    },
+    "src/js/actions/user/home": {
+      "url": "/js/actions/user/home_1611d45.js",
+      "type": "js",
+      "pkg": "p6"
+    },
+    "src/js/actions/user/list": {
+      "url": "/js/actions/user/list_44f90c6.js",
+      "type": "js",
+      "pkg": "p6"
+    },
+    "src/js/actions/user/page": {
+      "url": "/js/actions/user/page_8b1c1bf.js",
+      "type": "js",
+      "deps": [
+        "src/js/actions/user/index"
+      ],
+      "pkg": "p6"
+    },
+    "src/js/containers/user/index": {
+      "url": "/js/containers/user/index_4ba0920.js",
+      "type": "js",
+      "deps": [
+        "src/js/actions/user/index"
+      ],
+      "pkg": "p4"
+    },
+    "src/js/containers/user/home": {
+      "url": "/js/containers/user/home_f675f48.js",
+      "type": "js",
+      "deps": [
+        "src/js/actions/user/index",
+        "src/js/actions/user/home"
+      ],
+      "pkg": "p4"
+    },
+    "src/js/containers/user/list": {
+      "url": "/js/containers/user/list_6e3073f.js",
+      "type": "js",
+      "deps": [
+        "src/js/actions/user/index",
+        "src/js/actions/user/list"
+      ],
+      "pkg": "p4"
+    },
+    "src/js/containers/user/page": {
+      "url": "/js/containers/user/page_cdf0e27.js",
+      "type": "js",
+      "deps": [
+        "src/js/actions/user/page"
+      ],
+      "pkg": "p4"
+    },
+    "src/js/user-router": {
+      "url": "/js/user-router_5aeabb6.js",
+      "type": "js",
+      "deps": [
+        "src/js/reducers/user/index",
+        "src/js/containers/user/index",
+        "src/js/containers/user/home",
+        "src/js/containers/user/list",
+        "src/js/containers/user/page"
+      ],
+      "pkg": "p4"
+    },
+    "src/js/reducers/user/index": {
+      "url": "/js/reducers/user/index_c6dace0.js",
+      "type": "js",
+      "deps": [
+        "src/js/reducers/user/home",
+        "src/js/reducers/user/list",
+        "src/js/reducers/user/page"
+      ],
+      "pkg": "p5"
+    },
+    "src/js/reducers/user/home": {
+      "url": "/js/reducers/user/home_f0aef13.js",
+      "type": "js",
+      "pkg": "p5"
+    },
+    "src/js/reducers/user/list": {
+      "url": "/js/reducers/user/list_d183618.js",
+      "type": "js",
+      "pkg": "p5"
+    },
+    "src/js/reducers/user/page": {
+      "url": "/js/reducers/user/page_536c109.js",
+      "type": "js",
+      "pkg": "p5"
+    }
+  },
+  "pkg": {
+    "p6": {
+      "url": "/js/pkg/user-actions_f8e9d3f.js",
+      "type": "js"
+    },
+    "p4": {
+      "url": "/js/pkg/user-router_167faba.js",
+      "type": "js"
+    },
+    "p5": {
+      "url": "/js/pkg/user-reducers_109489d.js",
+      "type": "js"
+    }
+  }
+});</script>
+<script type="text/javascript" src="/js/pkg/admin-actions_436a600.js"></script>
+<script type="text/javascript" src="/js/containers/admin/login/index_9ee557d.js"></script>
+<script type="text/javascript" src="/js/containers/admin/meun/index_5fcdcfd.js"></script>
+<script type="text/javascript" src="/js/containers/admin/public/top_a1fe414.js"></script>
+<script type="text/javascript" src="/js/containers/admin/public/dialog_4d10941.js"></script>
+<script type="text/javascript" src="/js/containers/admin/index_1856c26.js"></script>
+<script type="text/javascript" src="/js/components/admin/index_70875c7.js"></script>
+<script type="text/javascript" src="/js/pkg/common-utils_9e45465.js"></script>
+<script type="text/javascript" src="/js/pkg/admin-reducers_3d45793.js"></script>
+<script src="/js/pkg/admin-router_2e7eac2.js"></script>
 </body>
 </html>

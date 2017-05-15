@@ -1,0 +1,16 @@
+.plug-table-loading{
+  text-align: center;
+  td{
+    height:100px;
+    text-align: center;
+    span{
+      display:inline-block;
+      width:100px;
+      height:100px;
+      background: url(../images/public/help-loan-oading.gif) 0 0 no-repeat;
+    }
+  }
+  .fail-color{
+    color:#666;
+  }
+}

@@ -1,0 +1,21 @@
+.tcc-patrol-feedback {
+  width: 100%;
+}
+
+.tcc-patrol-feedback li {
+  width: 100%;
+  padding: 17px 0;
+  font-size: 14px;
+}
+
+.tcc-patrol-feedback li b {
+  width: 80px;
+  margin-right: 12px;
+  color: #666;
+  display: inline-block;
+}
+
+.tcc-patrol-feedback li span {
+  color: #bcbcbc;
+  display: inline-block;
+}

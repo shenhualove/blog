@@ -9,10 +9,4 @@ router.get('/', async function (ctx, next) {
   });
 })
 
-router.get('/foo', async function (ctx, next) {
-  await ctx.render('admin', {
-
-  });
-});
-
 module.exports = router;

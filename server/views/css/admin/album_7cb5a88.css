@@ -1,0 +1,79 @@
+.album-pop-content {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  position: fixed;
+  z-index: 888;
+  display: none;
+}
+
+.album-pop-content .pop {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.39);
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 889;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.album-pop-content .image-content {
+  position: fixed;
+  z-index: 9999;
+  width: 1120px;
+  height: 800px;
+  top: 50%;
+  margin-top: -400px;
+  left: 50%;
+  margin-left: -560px;
+  text-align: center;
+}
+
+.album-pop-content .image-content .img-con {
+  width: 702px;
+  height: 800px;
+  background: #fff;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.album-pop-content .image-content .img-con img {
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.album-pop-content .image-content .left-btn {
+  width: 210px;
+  height: 100%;
+  display: inline-block;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  /*margin-top:-54px;*/
+  left: 0;
+  cursor: pointer;
+}
+
+.album-pop-content .image-content .l-btn {
+  background: url("../images/public/image-left.png") center no-repeat;
+  background-size: 56px 99px;
+}
+
+.album-pop-content .image-content .right-btn {
+  width: 210px;
+  height: 100%;
+  display: inline-block;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  /*margin-top:-54px;*/
+  right: 0;
+  cursor: pointer;
+}
+
+.album-pop-content .image-content .r-btn {
+  background: url("../images/public/image-right.png") center no-repeat;
+  background-size: 56px 99px;
+}

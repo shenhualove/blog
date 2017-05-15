@@ -1,0 +1,74 @@
+/*
+部门树形结构菜单样式
+*/
+.departMent-tree-wrapper{
+    min-width: 200px;
+    margin-left: 5px;
+    display: inline-block;
+    margin-right: 20px;
+    float: left;
+    color: #555;
+    position: relative;
+    input{
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #dcdcdc;
+        height: 34px;
+        font-size: 12px;
+        line-height: 34px;
+        display: inline-block;
+        background: #fff url(/images/public/select-down_8477f60.png) 175px 10px no-repeat;
+        background-size: 12px 10px;
+    }
+}
+.departMent-tree-wrap{
+    width: 200px;
+    max-height: 300px;
+    display: none;
+    overflow-y: scroll;
+    position: absolute;
+    left: 0;
+    top: 34px;
+    z-index: 99;
+    background: #fff;
+    box-shadow: 1px 1px 5px rgba(0,0,0,.3);
+    ul{
+        margin:0;
+        width: 100%;        
+        li{
+            p{
+                width: 100%;
+                padding: 0 10px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 14px;
+                color: #333;
+                text-overflow:ellipsis;
+                white-space: nowrap;
+                
+                i{
+                    width: 20px;
+                    height: 30px;
+                    color: #999;
+                    display: inline-block;                    
+                    cursor: pointer;
+                    vertical-align: middle;
+                }
+                span{
+                    height: 30px;
+                    display: inline-block;
+                    cursor: pointer;
+                    line-height: 30px;
+                    margin: 0;
+                }
+            }
+
+            
+        }
+        &.child-ul{
+            display: none;
+            margin-left: 15px;
+        }
+    
+    }
+}
