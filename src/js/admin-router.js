@@ -27,12 +27,47 @@ ReactDOM.render((
     <Provider store={store}>
         <Router history={historys}>
             <Route path='/admin' component={Index}>
-                <IndexRoute getComponent={(location, cb) => {
-                    require(['./containers/admin/home'], function (Home) {
-                        cb(null, Home);
-                    });
-                }}/>
+                //栏目管理
+                <Route path='column'>
+                    <Route path='list' getComponent={(location, cb) => {
+                        require(['./containers/admin/column/list'], function (columnList) {
+                            cb(null, columnList);
+                        });
+                    }}/>
+                    <Route path='add' getComponent={(location, cb) => {
+                        require(['./containers/admin/column/add'], function (columnAdd) {
+                            cb(null, columnAdd);
+                        });
+                    }}/>
+                </Route>
 
+                //文章管理
+                <Route path='article'>
+                    <Route path='list' getComponent={(location, cb) => {
+                        require(['./containers/admin/article/list'], function (articleList) {
+                            cb(null, articleList);
+                        });
+                    }}/>
+                    <Route path='add' getComponent={(location, cb) => {
+                        require(['./containers/admin/article/add'], function (articleAdd) {
+                            cb(null, articleAdd);
+                        });
+                    }}/>
+                </Route>
+
+                //链接管理
+                <Route path='link'>
+                    <Route path='list' getComponent={(location, cb) => {
+                        require(['./containers/admin/link/list'], function (linkList) {
+                            cb(null, linkList);
+                        });
+                    }}/>
+                    <Route path='add' getComponent={(location, cb) => {
+                        require(['./containers/admin/link/add'], function (linkAdd) {
+                            cb(null, linkAdd);
+                        });
+                    }}/>
+                </Route>
                 //系统管理
                 <Route path='System'>
                     // 角色管理

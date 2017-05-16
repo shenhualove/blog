@@ -3,17 +3,15 @@
  *
  * 顶部模块
  */
-import objectAssign from 'object-assign';
 //初始化state
-const initalize = sessionStorage.getItem('topState')?JSON.parse(sessionStorage.getItem('topState')):{
+const initalize = {
 
 };
 
 function top (state = initalize,action) {
     switch (action.type) {
         case "TOP_HANDLE"  :
-            sessionStorage.setItem("topState",JSON.stringify(objectAssign({},state,action.options)));
-            return objectAssign({},state,action.options);
+            return Object.assign({},state,action.options);
         default :
             return state;
     }

@@ -17,22 +17,22 @@ class Index extends React.Component{
                     <UserLogin />
                     <Dialog />
                 </div>
-            );
+            )
         }else{
-                return(
-                    <div className="h100">
-                        <TopMenu  />
-                        {/*Main*/}
-                        <div className="contioner">
-                            <div className="center-content" >
-                                <div className="show-content" >
-                                    {this.props.children}
-                                </div>
+            return(
+                <div className="h100">
+                    <TopMenu  />
+                    {/*Main*/}
+                    <div className="contioner">
+                        <div className="center-content" >
+                            <div className="show-content" >
+                                {this.props.children}
                             </div>
                         </div>
-                        <Dialog />
                     </div>
-                )
+                    <Dialog />
+                </div>
+            )
         }
     }
 }

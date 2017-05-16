@@ -8,13 +8,11 @@ import {connect} from 'react-redux';
 import {browserHistory } from 'react-router';
 import {topHandle,logOut,setPassWord} from '../../../actions/admin/top';
 import {dialogHandle} from '../../../actions/admin/dialog';
-import Menu from '../meun/index';
+import Menu from '../../../components/admin/common/menu';
 
 class Top extends React.Component{
-
     //修改密码
     editPassword(){
-
         let html =[];
         html.push(<p className='ptb15 text-c' key="oldPsd"><input id='oldPsd'  type='password' maxLength='32' placeholder='请输入旧密码' /></p>);
         html.push(<p className='ptb15 text-c' key="newPsd"><input id='newPsd' type='password' maxLength='32' placeholder='请输入新密码' /></p>);
@@ -117,13 +115,12 @@ class Top extends React.Component{
 
     render(){
         return(
-
             <div className="top-content clearfix">
                 <span className="left-icon"></span>
                 <Menu list={this.props.login.Jurisdiction} />
                 <div className="right clearfix">
                     <span className="user-icon"></span>
-                    <span className="user-name">{this.props.login.account.trueName}</span>
+                    <span className="user-name">{this.props.login.account.userName}</span>
                     <span className="right-down"></span>
                     {/*用户下拉框*/}
                     <div className="user-select">
@@ -134,7 +131,6 @@ class Top extends React.Component{
                     </div>
                 </div>
             </div>
-
         )
     }
 }

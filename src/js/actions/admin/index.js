@@ -6,12 +6,14 @@ import {handle} from '../common';
 import {dialogHandle,ajaxErrorLog} from './dialog';
 
 const handleText="LOGIN_HANDLE";
+
 //触发action
 export function loginHandle(data){
     return dispatch=>{
         dispatch(handle(handleText,data));
     }
 }
+
 //登录接口
 export function accountLogin(options){
     return dispatch=>{
@@ -27,7 +29,7 @@ export function accountLogin(options){
                     dispatch(handle(handleText,{
                         loginHash:true
                     }));
-                    dispatch(handle("LOGIN_SUCCESS",data.data.account));
+                    dispatch(handle("LOGIN_SUCCESS",data.data));
                 }else{
                     dispatch(handle(handleText,{
                         errorMsg:data.message,

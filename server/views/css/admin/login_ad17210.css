@@ -1,0 +1,325 @@
+@charset "UTF-8";
+.login-content {
+  width: 100%;
+  height: 100%;
+  background: url("/images/admin/login/login-back_40a8510.jpg");
+  background-size: 100% 100%;
+  /*display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;*/
+  color: #fff;
+}
+
+.login-content .form-content {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -195px;
+  margin-left: -161px;
+}
+
+.login-content .form-content .login-title {
+  width: 287px;
+  height: 35px;
+  background: url("/images/admin/login/login-title_3f93ecf.png");
+  background-size: 100% 100%;
+  display: inline-block;
+}
+
+.login-content .form-content .login {
+  width: 322px;
+  height: 322px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0 34px;
+  margin-top: 30px;
+}
+
+.login-content .form-content .login input {
+  width: 100%;
+  height: 40px;
+  background-color: #f3f3f3;
+  border: none;
+  padding-left: 10px;
+  color: #333;
+}
+
+.login-content .form-content .login .user-name {
+  margin-top: 62px;
+}
+
+.login-content .form-content .login .pass-word {
+  margin-top: 20px;
+}
+
+.login-content .form-content .login .error-content {
+  height: 34px;
+  line-height: 34px;
+}
+
+.login-content .form-content .login .error-content .error {
+  text-align: left;
+}
+
+.login-content .form-content .login .error-content .error .error-icon {
+  width: 16px;
+  height: 14px;
+  background: url("/images/admin/login/error-icon_8981afc.png");
+  background-size: 100% 100%;
+  display: inline-block;
+}
+
+.login-content .form-content .login .error-content .error .error-val {
+  font-size: 12px;
+  color: #ff4141;
+  margin-left: 4px;
+}
+
+.login-content .form-content .login .login-btn {
+  width: 100%;
+  height: 38px;
+  line-height: 38px;
+  background-color: #66d354;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.login-content .form-content .login .sc-or-wj {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 12px;
+  color: #3fb3eb;
+}
+
+.login-content .form-content .login .sc-or-wj span {
+  cursor: pointer;
+}
+
+.login-content .form-content .forget-password {
+  width: 322px;
+  height: 322px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0 34px;
+  margin-top: 30px;
+  display: none;
+}
+
+.login-content .form-content .forget-password input {
+  width: 100%;
+  height: 40px;
+  background-color: #f3f3f3;
+  border: none;
+  padding-left: 10px;
+  color: #333;
+}
+
+.login-content .form-content .forget-password .user-name {
+  margin-top: 62px;
+}
+
+.login-content .form-content .forget-password .pass-word {
+  margin-top: 20px;
+}
+
+.login-content .form-content .forget-password .error-content {
+  height: 34px;
+  line-height: 34px;
+}
+
+.login-content .form-content .forget-password .error-content .error {
+  text-align: left;
+}
+
+.login-content .form-content .forget-password .error-content .error .error-icon {
+  width: 16px;
+  height: 14px;
+  background: url("/images/admin/login/error-icon_8981afc.png");
+  background-size: 100% 100%;
+  display: inline-block;
+}
+
+.login-content .form-content .forget-password .error-content .error .error-val {
+  font-size: 12px;
+  color: #ff4141;
+  margin-left: 4px;
+}
+
+.login-content .form-content .forget-password .login-btn {
+  width: 100%;
+  height: 38px;
+  line-height: 38px;
+  background-color: #66d354;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.login-content .form-content .forget-password .sc-or-wj {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 12px;
+  color: #3fb3eb;
+}
+
+.login-content .form-content .forget-password .sc-or-wj span {
+  cursor: pointer;
+}
+
+.login-content .form-content .phone-check {
+  width: 322px;
+  height: 322px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0 34px;
+  margin-top: 30px;
+  display: none;
+}
+
+.login-content .form-content .phone-check input {
+  width: 100%;
+  height: 40px;
+  background-color: #f3f3f3;
+  border: none;
+  padding-left: 10px;
+  color: #333;
+}
+
+.login-content .form-content .phone-check .user-name {
+  margin-top: 62px;
+}
+
+.login-content .form-content .phone-check .code-cont {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.login-content .form-content .phone-check .code-cont .code-word {
+  width: 148px;
+}
+
+.login-content .form-content .phone-check .code-cont .code-btn {
+  background-color: #f2fbff;
+  width: 90px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  margin-left: 10px;
+  color: #8ad9ff;
+  font-size: 14px;
+  float: right;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.login-content .form-content .phone-check .error-content {
+  height: 34px;
+  line-height: 34px;
+}
+
+.login-content .form-content .phone-check .error-content .error {
+  text-align: left;
+}
+
+.login-content .form-content .phone-check .error-content .error .error-icon {
+  width: 16px;
+  height: 14px;
+  background: url("/images/admin/login/error-icon_8981afc.png");
+  background-size: 100% 100%;
+  display: inline-block;
+}
+
+.login-content .form-content .phone-check .error-content .error .error-val {
+  font-size: 12px;
+  color: #ff4141;
+  margin-left: 4px;
+}
+
+.login-content .form-content .phone-check .login-btn {
+  width: 100%;
+  height: 38px;
+  line-height: 38px;
+  background-color: #66d354;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.login-content .form-content .phone-check .sc-or-wj {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 12px;
+  color: #3fb3eb;
+}
+
+.login-content .form-content .phone-check .sc-or-wj span {
+  cursor: pointer;
+}
+
+.login-content .login-record {
+  margin: 0 auto;
+  padding: 20px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+}
+
+.login-content .login-record span {
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+  font-size: 10px;
+  font-family: '楷体','楷体_GB2312';
+  margin-right: 5px;
+}
+
+.login-content .login-record a {
+  display: inline-block;
+  text-decoration: none;
+  height: 20px;
+  line-height: 20px;
+  font-size: 10px;
+  color: #fff;
+  font-family: '楷体','楷体_GB2312';
+  vertical-align: middle;
+}
+
+.login-content .login-record a i {
+  float: left;
+  width: 18px;
+  height: 18px;
+  background: url("/images/admin/login/record-icon_d0289dc.png") no-repeat;
+  background-size: 100% auto;
+}
+
+.login-content .login-record a p {
+  float: left;
+  height: 20px;
+  line-height: 20px;
+  margin: 0px 0px 0px 5px;
+}
+
+/*input、 textarea placeholder css样式*/
+.login-content .form-content input::-moz-placeholder, .login-content .form-content textarea::-moz-placeholder {
+  color: #bbbbbb;
+}
+
+.login-content .form-content input:-ms-input-placeholder, .login-content .form-content textarea:-ms-input-placeholder {
+  color: #bbbbbb;
+}
+
+.login-content .form-content input::-webkit-input-placeholder, .login-content .form-content textarea::-webkit-input-placeholder {
+  color: #bbbbbb;
+}

@@ -2,7 +2,7 @@
  * Created by shenhua on 2017/4/22.
  */
 //接口域名
-const host="http://www.shenhua.love";
+const host="";
 //接口URL集合
 const urls={
     /*通用模块开始*/
@@ -23,6 +23,10 @@ const urls={
     /*列表页开始*/
     page      : "/page",//栏目内容页页
     /*列表页结束*/
+
+    //后台
+    accountLogin:"/accountLogin",//登录
+
 };
 
 function Fetch(options){

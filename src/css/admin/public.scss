@@ -23,7 +23,7 @@ html,body{
     position: relative;
     .left-icon{
         display: inline-block;
-        background: url("../images/public/top-left-icon.png");
+        background: url("../../images/admin/public/top-left-icon.png");
         background-size: 100% 100%;
         width:192px;
         height: 32px;
@@ -53,7 +53,7 @@ html,body{
             vertical-align: middle;
         }
         .user-icon{
-            background: url("../images/public/top-right-user.png");
+            background: url("../../images/admin/public/top-right-user.png");
             background-size: 100% 100%;
             width:25px;
             height: 24px;
@@ -67,7 +67,7 @@ html,body{
             margin-right: 5px;
         }
         .right-down{
-               background: url("/images/public/top-right-down.png") center center no-repeat;
+               background: url("../../images/admin/public/top-right-down.png") center center no-repeat;
                background-size: 11px 6px;
                width: 15px;
                height: 24px;
@@ -191,7 +191,7 @@ html,body{
     span{
         width:16px;
         height: 14px;
-        background: url("../images/login/error-icon.png");
+        background: url("../../images/admin/login/error-icon.png");
         background-size: 100% 100%;
         display: inline-block;
     }
@@ -212,7 +212,7 @@ html,body{
                 margin-top: 13px;
                 width:12px;
                 height: 8px;
-                background: url("../images/public/up.png");
+                background: url("../../images/admin/public/up.png");
                 background-size: 100% 100%;
             }
             .button.ico_close{
@@ -221,7 +221,7 @@ html,body{
                 margin-top: 13px;
                 width:12px;
                 height: 8px;
-                background: url("../images/public/down.png");
+                background: url("../../images/admin/public/down.png");
                 background-size: 100% 100%;
             }            
         }
@@ -236,7 +236,7 @@ html,body{
                 margin-top: 13px;
                 width:12px;
                 height: 8px;
-                background: url("../images/public/up.png");
+                background: url("../../images/admin/public/up.png");
                 background-size: 100% 100%;
             }
             .button.ico_close{
@@ -245,7 +245,7 @@ html,body{
                 margin-top: 13px;
                 width:12px;
                 height: 8px;
-                background: url("../images/public/down.png");
+                background: url("../../images/admin/public/down.png");
                 background-size: 100% 100%;
             }
         }
@@ -264,7 +264,7 @@ html,body{
 
 
 .menu-icon-role{
-     background: url("/images/public/left-menu-role.png") center center no-repeat;
+     background: url("../../images/admin/public/left-menu-role.png") center center no-repeat;
      background-size: 20px 20px;
      width:20px;
      height: 20px;
@@ -273,7 +273,7 @@ html,body{
      margin-left:10px;
 }
 .menu-icon-user{
-     background: url("/images/public/left-menu-resources.png") center center no-repeat;
+     background: url("../../images/admin/public/left-menu-resources.png") center center no-repeat;
      background-size: 20px 17px;
      width:20px;
      height: 17px;
@@ -312,119 +312,25 @@ ul.top-menu{
         }
         ul{
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+            background: #f2fff0;
             li{
                 width: 130px;
                 height: 40px;
                 line-height: 40px;
                 border-bottom: 1px solid #dcdcdc;
-                background: #d1eecc;
-                ul{
-                    top: 0;
-                    left: 129px;
-                    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-                    li{
-                        width: 130px;
-                        height: 40px;
-                        line-height: 40px;
-                        border-bottom: 1px solid #dcdcdc;
-                        background: #f2fff0;
-                        a{
-                            width: 100%;
-                            line-height: 40px;
-                            font-size: 14px;
-                            color: #333;
-                            text-align: left;
-                            padding: 0 15px;
-                        }
-                        &:hover{
-                            background: #d1eecc;
-                        }
-                    }
+                &:hover{
+                    background: #d1eecc;
+                }
+                &:last-child{
+                    border:0;
                 }
             }
-        }        
-        &>ul{
-            left: 0;
-            top: 59px;
-            background: #f2fff0;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-            li{
-                border: 0;
-            }
-            &>li{
-                &>a{
-                    width: 100%;
-                    line-height: 40px;
-                    font-size: 14px;
-                    color: #333;
-                    
-                            padding-left: 35px;
-                            text-align: left;
-                    background: url("/images/public/subMenuArrow.png") 90% center no-repeat;
-                    &:only-child{
-                         background-image: none;
-                     }
-                }
-            }
-        }
-        &.System{//user 图标
-            &>ul{
-                &>li{
-                     border-bottom: 1px solid #dcdcdc;
-                     background: url("/images/public/subMenu-icon.png") 10px center no-repeat;
-                     &:hover{
-                         background: #d1eecc url("/images/public/subMenu-icon.png") 10px center no-repeat;
-                     }
-                     &:last-child{
-                        border:0;
-                     }
-                }
-            }
-        }
-        &.Customer{//user 图标
-            &>ul{
-                &>li{
-                     border-bottom: 1px solid #dcdcdc;
-                     background: url("/images/public/subMenu-icon1.png") 10px center no-repeat;
-                     &:hover{
-                         background: #d1eecc url("/images/public/subMenu-icon1.png") 10px center no-repeat;
-                     }
-                     &:last-child{
-                        border:0;
-                     }
-                }
-            }
-        }
-        &.HelpLoan{
-            &>ul{
-                &>li{
-                    border-bottom: 1px solid #dcdcdc;
-                    background: url("/images/public/zhudai.png") 10px center no-repeat;
-                    &:hover{
-                        background: #d1eecc url("/images/public/zhudai.png") 10px center no-repeat;
-                    }
-                    &:last-child{
-                        border:0;
-                    }
-                }
-            }
-        }
-        &.ReportForm{
-            &>ul{
-                &>li{
-                    width: 160px;
-                    border-bottom: 1px solid #dcdcdc;
-                    background: url("/images/public/baobiao.png") 10px center no-repeat;
-                    &:hover{
-                        background: #d1eecc url("/images/public/baobiao.png") 10px center no-repeat;
-                    }
-                    &:last-child{
-                        border:0;
-                    }
-                    &>ul{
-                       left: 160px; 
-                    }
-                }
+            a{
+                width: 100%;
+                line-height: 40px;
+                font-size: 14px;
+                color: #333;
+
             }
         }
         
