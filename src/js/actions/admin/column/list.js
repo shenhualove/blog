@@ -2,22 +2,21 @@
  * Created by apple on 17/5/16.
  */
 import Fetch from '../../../utils/common/fetch';
-import {handle} from '../../common';
 import {dialogHandle,ajaxErrorLog} from '../dialog';
-
-const handleText="COLUMN_LIST_HANDLE";
 
 //触发action
 export function columnListHandle(data){
-    return dispatch=>{
-        dispatch(handle(handleText,data));
+    return {
+        type:"COLUMN_LIST_HANDLE",
+        data
     }
 }
 
 //获取栏目列表
 export function getColumnList(options){
     return dispatch=>{
-        dispatch(handle(handleText,{
+        dispatch(columnListHandle({
+            status:"loading",
             curPage:options.curPage,
             pageSize:options.pageSize
         }));
@@ -30,18 +29,28 @@ export function getColumnList(options){
             },
             success:function(data){
                 if(data.status=="1"){
-                    dispatch(handle("GET_COLUMN_LIST",data.data));
+                    if(data.data.length>0){
+                        dispatch(columnListHandle({
+                            listData:data.data,
+                            totalSize:data.count,
+                            status:"success"
+                        }));
+                    }else{
+                        dispatch(columnListHandle({
+                            listData:data.data,
+                            totalSize:data.count,
+                            status:"nothing"
+                        }));
+                    }
                 }else{
-                    dispatch(handle(handleText,{
-                        errorMsg:data.message,
-                        errorShow:true,
-                        loginHash:true
+                    dispatch(columnListHandle({
+                        status:"fail"
                     }));
                 }
             },
             error:function(){
-                dispatch(handle(handleText,{
-                    loginHash:true
+                dispatch(columnListHandle({
+                    status:"fail"
                 }));
             },
             errorDialog:function(xhr, errorType, error){

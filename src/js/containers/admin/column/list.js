@@ -6,7 +6,6 @@ import {connect} from 'react-redux';
 import CenterTopNav from '../../../components/admin/common/centerTopNav';
 import Pagination from '../../../components/admin/common/pagination';
 import {dialogHandle} from '../../../actions/admin/dialog';
-import SelectBox from '../../../components/admin/common/selectBox';
 import Table from '../../../components/admin/common/table';
 import * as actions from '../../../actions/admin/column/list';
 
@@ -25,7 +24,7 @@ class List extends React.Component{
     }
 
     componentDidMount(){
-        this.getData(1,10);
+        this.getData(this.props.columnList.curPage,this.props.columnList.pageSize);
     }
 
     render(){
@@ -48,7 +47,7 @@ class List extends React.Component{
                             totalNumber={this.props.columnList.totalSize}
                             pageLimt={this.props.columnList.pageSize}
                             pageClick={this.pageNavClick.bind(this)}
-                            />
+                        />
                     </div>
                     {/*content end*/}
                 </div>

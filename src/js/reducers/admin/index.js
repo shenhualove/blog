@@ -7,6 +7,7 @@ import top from './top';
 import user from './user';
 import dialog from './dialog';
 import columnList from './column/list';
+import articleList from './article/list';
 
 
 const admin=combineReducers({
@@ -17,6 +18,7 @@ const admin=combineReducers({
     roles,
     dialog,
     columnList,
+    articleList,
     routing: routerReducer,
 });
 

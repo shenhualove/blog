@@ -25,7 +25,11 @@ const urls={
     /*列表页结束*/
 
     //后台
-    accountLogin:"/accountLogin",//登录
+    accountLogin:"/admin/accountLogin",//登录
+    getColumnList:"/admin/getColumnList",//获取栏目列表
+    getColumnAll:"/admin/getColumnAll",//获取所有栏目
+    getArticleList:"/admin/getArticleList",//获取文章列表
+    deleteArticle:"/admin/deleteArticle",//删除文章
 
 };
 

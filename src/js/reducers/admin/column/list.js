@@ -15,18 +15,16 @@ const initalize = {
         {title:"栏目排序",type:"sort"},
         {title:"添加时间",type:"time"},
         {title:"操作",htmlType:[
-            {type:"button",text:"修改",callBack:null},
-            {type:"button",text:"删除",callBack:null}
+            {type:"button",text:"修改",callBack:null,param:"id"},
+            {type:"button",text:"删除",callBack:null,param:"id"}
         ]}
     ]
 };
 
 function columnList (state = initalize,action) {
     switch (action.type) {
-
-        case "BANKALLDATADAY_HANDLE"  :
-            return objectAssign({},state,action.options);
-
+        case "COLUMN_LIST_HANDLE"  :
+            return Object.assign({},state,action.data);
         default :
             return state;
     }
