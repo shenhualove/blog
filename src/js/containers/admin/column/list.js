@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import {connect} from 'react-redux';
+import {browserHistory} from 'react-router';
 import CenterTopNav from '../../../components/admin/common/centerTopNav';
 import Pagination from '../../../components/admin/common/pagination';
 import {dialogHandle} from '../../../actions/admin/dialog';
@@ -16,15 +17,37 @@ class List extends React.Component{
     }
 
     //请求数据
-    getData(curPage,pageSize){
+    getData(){
         this.props._getColumnList({
-            curPage:curPage,
-            pageSize:pageSize,
+            curPage:this.props.columnList.curPage,
+            pageSize:this.props.columnList.pageSize
+        })
+    }
+
+    //修改栏目
+    changeBtn(id){
+        browserHistory.push('/admin/column/update/'+id);
+    }
+
+    //删除栏目
+    deleteBtn(id){
+        this.props._dialogHandle({
+            show:true,
+            type:"tips",
+            tipsType:"confirm",
+            content:"确定要删除这个栏目？",
+            success:function(){
+                this.props._deleteColumn(id,this.getData.bind(this))
+            }.bind(this)
         })
     }
 
     componentDidMount(){
-        this.getData(this.props.columnList.curPage,this.props.columnList.pageSize);
+        //绑定修改按钮事件
+        this.props.columnList.titleList[5].htmlType[0].callBack=this.changeBtn.bind(this);
+        //绑定删除按钮事件
+        this.props.columnList.titleList[5].htmlType[1].callBack=this.deleteBtn.bind(this);
+        this.getData();
     }
 
     render(){
@@ -65,6 +88,12 @@ function mapDispatchToProps(dispatch){
     return {
          _getColumnList:(options)=>{
              dispatch(actions.getColumnList(options))
+         },
+         _dialogHandle:(options)=>{
+             dispatch(dialogHandle(options));
+         },
+         _deleteColumn:(id,callBack)=>{
+             dispatch(actions.deleteColumn(id,callBack))
          }
     }
 }

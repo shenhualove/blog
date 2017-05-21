@@ -5,36 +5,37 @@
 const host="";
 //接口URL集合
 const urls={
-    /*通用模块开始*/
-    studyLinks : "/studyLinks",//文档链接
-    friendLinks: "/friendLinks",//友情链接
-    columnList: "/columnList",//栏目列表
-    /*通用模块结束*/
+    /*前台模块开始*/
+    studyLinks  : "/studyLinks",//文档链接
+    friendLinks : "/friendLinks",//友情链接
+    columnList  : "/columnList",//栏目列表
+    hotRead     : "/hotRead",//推荐集合
+    newPush     : "/newPush",//最新发布列表
+    list        : "/list",//栏目列表页
+    page        : "/page",//栏目内容页
+    /*前台模块结束*/
 
-    /*首页开始*/
-    hotRead   : "/hotRead",//推荐集合
-    newPush   : "/newPush",//最新发布列表
-    /*首页结束*/
-
-    /*列表页开始*/
-    list      : "/list",//栏目列表页
-    /*列表页结束*/
-
-    /*列表页开始*/
-    page      : "/page",//栏目内容页页
-    /*列表页结束*/
-
-    //后台
-    accountLogin:"/admin/accountLogin",//登录
-    getColumnList:"/admin/getColumnList",//获取栏目列表
-    getColumnAll:"/admin/getColumnAll",//获取所有栏目
-    getArticleList:"/admin/getArticleList",//获取文章列表
-    deleteArticle:"/admin/deleteArticle",//删除文章
-
+    /*后台模块开始*/
+    accountLogin   : "/admin/accountLogin",//登录
+    getColumnList  : "/admin/getColumnList",//获取栏目列表
+    getColumnAll   : "/admin/getColumnAll",//获取所有栏目
+    getColumn      : "/admin/getColumn",//获取栏目详情
+    addColumn      : "/admin/addColumn",//增加栏目
+    updateColumn   : "/admin/updateColumn",//更新栏目
+    deleteColumn   : "/admin/deleteColumn",//删除栏目
+    getArticleList : "/admin/getArticleList",//获取文章列表
+    addArticle     : "/admin/addArticle",//增加文章
+    updateArticle  : "updateArticle",//更新文章
+    deleteArticle  : "/admin/deleteArticle",//删除文章
+    getLinkList    : "/admin/getLinkList",//获取文章列表
+    addLink        : "/admin/addLink",//增加链接
+    updateLink     : "/admin/updateLink",//更新链接
+    deleteLink     : "/admin/deleteLink",//删除文章
+    upload         : "/admin/upload",//上传文件图片
+    /*后台模块结束*/
 };
 
 function Fetch(options){
-
     //请求头部参数
     let sendHeader={
         method: options.type?options.type:"POST",//发送方式
@@ -80,7 +81,6 @@ function Fetch(options){
     }, function(e) {
         alert("网络异常，请求错误");
     });
-
 }
 
 //对象转换为key=value&key=value

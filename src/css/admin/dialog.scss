@@ -96,16 +96,16 @@ html,body{
                     margin-top: -20px;
                     background-size: 70px;
                     &.success{
-                        background-image: url(../images/public/icon_success.png);
+                        background-image: url(../../images/admin/public/icon_success.png);
                     }
                     &.fail{
-                        background-image: url(../images/public/icon_fail.png);
+                        background-image: url(../../images/admin/public/icon_fail.png);
                     }
                     &.doubt{
-                        background-image: url(../images/public/icon_doubt.png);
+                        background-image: url(../../images/admin/public/icon_doubt.png);
                     }
                     &.warning{
-                        background-image: url(../images/public/icon_warning.png);
+                        background-image: url(../../images/admin/public/icon_warning.png);
                     }
                 }
             }
@@ -156,7 +156,7 @@ html,body{
                 height: 200px;  
                 padding-top: 10px;
                 display: table;              
-                background: url(../images/public/loading.gif) center center no-repeat;
+                background: url(../../images/admin/public/loading.gif) center center no-repeat;
                 .dialog-loading-content{
                         text-align: center;
                         vertical-align: middle;

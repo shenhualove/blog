@@ -1,13 +1,13 @@
 /**
- * Created by apple on 17/5/16.
+ * Created by shenhua on 2017/5/21.
  */
 import React from 'react';
 import {connect} from 'react-redux';
 import CenterTopNav from '../../../components/admin/common/centerTopNav';
 import {dialogHandle} from '../../../actions/admin/dialog';
-import * as actions from '../../../actions/admin/column/add';
+import * as actions from '../../../actions/admin/column/update';
 
-class Add extends React.Component{
+class Update extends React.Component{
     //监听输入事件
     inputTitle(key,e){
         let obj = {};
@@ -26,7 +26,8 @@ class Add extends React.Component{
                 show: true
             })
         }else{
-            this.props._addColumn({
+            this.props._updateColumn({
+                id:this.props.params.id,
                 title:this.props.columnAdd.title,
                 keyWord:this.props.columnAdd.keyWord,
                 caption:this.props.columnAdd.caption,
@@ -35,10 +36,14 @@ class Add extends React.Component{
         }
     }
 
+    componentDidMount(){
+        this.props._getColumn(this.props.params.id);
+    }
+
     render(){
         return(
             <div className="height100p">
-                <CenterTopNav title="栏目添加" parentList={[{name:"栏目管理"}]} />
+                <CenterTopNav title="栏目修改" parentList={[{name:"栏目管理"}]} />
                 <div className="height100pY plr26">
                     {/*form content begin*/}
                     <div className="pub-form-top clearfix">
@@ -64,7 +69,7 @@ class Add extends React.Component{
                         </ul>
                         <div className="pub-form-btns clearfix">
                             <div className="left">
-                                <button onClick={this.submitClick.bind(this)}>添加</button>
+                                <button onClick={this.submitClick.bind(this)}>修改</button>
                             </div>
                         </div>
 
@@ -86,18 +91,21 @@ function mapDispatchToProps(dispatch){
         _handle:(options)=>{
             dispatch(actions.handle(options))
         },
-        _addColumn:(options)=>{
-            dispatch(actions.addColumn(options))
+        _updateColumn:(options)=>{
+            dispatch(actions.updateColumn(options))
         },
         _dialogHandle:(options)=>{
             dispatch(dialogHandle(options))
+        },
+        _getColumn:(options)=>{
+            dispatch(actions.getColumn(options))
         }
     }
 }
 
-const columnAdd = connect(
+const columnUpdate = connect(
     mapStateToProps,
     mapDispatchToProps
-)(Add);
+)(Update);
 
-export default columnAdd;
+export default columnUpdate;

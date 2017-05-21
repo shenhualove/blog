@@ -5,51 +5,48 @@ import Fetch from '../../../utils/common/fetch';
 import {dialogHandle,ajaxErrorLog} from '../dialog';
 
 //触发action
-export function columnListHandle(data){
+export function handle(data){
     return {
-        type:"COLUMN_LIST_HANDLE",
+        type:"LINK_LIST_HANDLE",
         data
     }
 }
 
-//获取栏目列表
-export function getColumnList(options){
+//获取文章列表
+export function getLinkList(options){
     return dispatch=>{
-        dispatch(columnListHandle({
+        dispatch(handle({
             status:"loading",
             curPage:options.curPage,
             pageSize:options.pageSize
         }));
-        
+
         Fetch({
-            url:"getColumnList",
-            data:{
-                pageSize:options.pageSize,
-                curPage:options.curPage
-            },
+            url:"getLinkList",
+            data:options,
             success:function(data){
                 if(data.status=="1"){
                     if(data.data.length>0){
-                        dispatch(columnListHandle({
+                        dispatch(handle({
                             listData:data.data,
                             totalSize:data.count,
                             status:"success"
                         }));
                     }else{
-                        dispatch(columnListHandle({
+                        dispatch(handle({
                             listData:data.data,
                             totalSize:data.count,
                             status:"nothing"
                         }));
                     }
                 }else{
-                    dispatch(columnListHandle({
+                    dispatch(handle({
                         status:"fail"
                     }));
                 }
             },
             error:function(){
-                dispatch(columnListHandle({
+                dispatch(handle({
                     status:"fail"
                 }));
             },
@@ -60,13 +57,13 @@ export function getColumnList(options){
     }
 }
 
-//删除栏目
-export function deleteColumn(id,fn){
+export function deleteLink(id,cid,fn){
     return dispatch=>{
         Fetch({
-            url:"deleteColumn",
+            url:"deleteLink",
             data:{
-                id:id
+                id:id,
+                columnId:cid
             },
             success:function(data){
                 if(data.status=="1"){
@@ -80,6 +77,7 @@ export function deleteColumn(id,fn){
                         time:2000,
                         content:data.message
                     }))
+                    console.log(fn)
                     typeof fn == 'function' && fn();
                 }else{
                     dispatch(dialogHandle({

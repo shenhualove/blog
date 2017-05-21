@@ -39,6 +39,11 @@ ReactDOM.render((
                             cb(null, columnAdd);
                         });
                     }}/>
+                    <Route path='update/:id' getComponent={(location, cb) => {
+                        require(['./containers/admin/column/update'], function (columnUpdate) {
+                            cb(null, columnUpdate);
+                        });
+                    }}/>
                 </Route>
 
                 //文章管理
@@ -51,6 +56,11 @@ ReactDOM.render((
                     <Route path='add' getComponent={(location, cb) => {
                         require(['./containers/admin/article/add'], function (articleAdd) {
                             cb(null, articleAdd);
+                        });
+                    }}/>
+                    <Route path='update/:id' getComponent={(location, cb) => {
+                        require(['./containers/admin/article/update'], function (articleUpdate) {
+                            cb(null, articleUpdate);
                         });
                     }}/>
                 </Route>
@@ -67,51 +77,12 @@ ReactDOM.render((
                             cb(null, linkAdd);
                         });
                     }}/>
-                </Route>
-                //系统管理
-                <Route path='System'>
-                    // 角色管理
-                    <Route path='RoleManager' getComponent={(location, cb) => {
-                        require(['./containers/roles/index'], function (RoleManager) {
-                            cb(null, RoleManager);
-                        });
-                    }}/>
-                    // 角色管理--新增角色
-                    <Route path='AddRole/:roleCode' getComponent={(location, cb) => {
-                        require(['./containers/roles/add'], function (addRole) {
-                            cb(null, addRole);
-                        });
-                    }}/>
-                    //用户管理
-                    <Route path='UserManager' getComponent={(location, cb) => {
-                        require(['./containers/user/index'], function (UserManager) {
-                            cb(null, UserManager);
-                        });
-                    }}/>
-                    //站点申请审核
-                    <Route path='UserManager' getComponent={(location, cb) => {
-                        require(['./containers/helpLoan/qualExam/siteAppication'], function (UserManager) {
-                            cb(null, UserManager);
+                    <Route path='update/:id' getComponent={(location, cb) => {
+                        require(['./containers/admin/link/update'], function (linkUpdate) {
+                            cb(null, linkUpdate);
                         });
                     }}/>
                 </Route>
-
-
-                //报表路由
-                <Route path='ReportForm'>
-                    //银行业务日报
-                    <Route path='bankData'>
-                        //全辖银行业务常规数据汇总报表-日
-                        <Route path='bankAllDataDay' getComponent={(location, cb) => {
-                            require(['./containers/reportForm/bankAllDataDay'], function (bankAllDataDay) {
-                                cb(null, bankAllDataDay);
-                            });
-                        }}/>
-                    </Route>
-
-
-                </Route>
-
             </Route>
         </Router>
     </Provider>
