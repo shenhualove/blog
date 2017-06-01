@@ -17,7 +17,7 @@ class Update extends React.Component{
 
     //保存
     submitClick(){
-        if(this.props.columnAdd.isSave){
+        if(this.props.columnUpdate.isSave){
             this.props._dialogHandle({
                 type: "tips",
                 time: 2000,
@@ -28,10 +28,10 @@ class Update extends React.Component{
         }else{
             this.props._updateColumn({
                 id:this.props.params.id,
-                title:this.props.columnAdd.title,
-                keyWord:this.props.columnAdd.keyWord,
-                caption:this.props.columnAdd.caption,
-                sort:this.props.columnAdd.sort,
+                title:this.props.columnUpdate.title,
+                keyWord:this.props.columnUpdate.keyWord,
+                caption:this.props.columnUpdate.caption,
+                sort:this.props.columnUpdate.sort,
             })
         }
     }
@@ -50,21 +50,21 @@ class Update extends React.Component{
                         <ul>
                             <li>
                                 <span>栏目名称:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"title")} placeholder="请输入栏目名称" value={this.props.columnAdd.title} />
+                                <input type="text" onChange={this.inputTitle.bind(this,"title")} placeholder="请输入栏目名称" value={this.props.columnUpdate.title} />
                             </li>
                             <li>
                                 <span>栏目关键字:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"keyWord")} placeholder="请输入栏目关键字" value={this.props.columnAdd.keyWord} />
+                                <input type="text" onChange={this.inputTitle.bind(this,"keyWord")} placeholder="请输入栏目关键字" value={this.props.columnUpdate.keyWord} />
                             </li>
                         </ul>
                         <ul>
                             <li>
                                 <span>栏目说明:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"caption")} placeholder="请输入栏目说明" value={this.props.columnAdd.caption} />
+                                <input type="text" onChange={this.inputTitle.bind(this,"caption")} placeholder="请输入栏目说明" value={this.props.columnUpdate.caption} />
                             </li>
                             <li>
                                 <span>栏目排序:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"sort")} placeholder="数字越小越靠前" value={this.props.columnAdd.sort} />
+                                <input type="text" onChange={this.inputTitle.bind(this,"sort")} placeholder="数字越小越靠前" value={this.props.columnUpdate.sort} />
                             </li>
                         </ul>
                         <div className="pub-form-btns clearfix">

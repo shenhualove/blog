@@ -13,7 +13,7 @@ export function handle(data){
     }
 }
 
-//添加栏目
+//修改栏目
 export function updateColumn(options){
     return dispatch=>{
         dispatch(handle({
@@ -59,24 +59,28 @@ export function updateColumn(options){
     }
 }
 
+//获取栏目信息
 export function getColumn(id){
     return dispatch=>{
-        dispatch(handle({
-            isSave:true
-        }));
-
         Fetch({
             url:"getColumn",
             data:{id:id},
             success:function(data){
                 if(data.status==1){
-
+                    dispatch(handle({
+                        title:data.data.title,//名称
+                        keyWord:data.data.keyWord,//关键字
+                        caption:data.data.caption,//说明
+                        sort :data.data.sort,//排序
+                    }));
                 }else{
-
+                    dispatch(dialogHandle({
+                        show:true,
+                        type:"tips",
+                        tipsType:"fail",
+                        content:data.message
+                    }))
                 }
-            },
-            error:function(){
-
             },
             errorDialog:function(xhr, errorType, error){
                 ajaxErrorLog(xhr, errorType, error,dispatch);

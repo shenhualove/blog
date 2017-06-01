@@ -29,6 +29,18 @@ router.post('/admin/getColumnList', async function (ctx, next) {
     }
 });
 
+//查询栏目
+router.post('/admin/getColumn', async function (ctx, next) {
+    let id   = ctx.request.body.id;
+    let sql  = "select * from `column` where  `id` = "+id;
+    let list = await mySql.query(sql);
+    ctx.body = {
+        status:1,
+        data:list[0],
+        message:'登录成功'
+    }
+});
+
 //新增栏目
 router.post('/admin/addColumn', async function (ctx, next) {
     let postData={
@@ -48,6 +60,31 @@ router.post('/admin/addColumn', async function (ctx, next) {
         ctx.body = {
             status:2,
             message:'添加栏目失败'
+        }
+    }
+});
+
+//更新栏目
+router.post('/admin/updateColumn', async function (ctx, next) {
+    let postData={
+        id:ctx.request.body.id,
+        title:ctx.request.body.title,
+        keyWord:ctx.request.body.keyWord,
+        sort:ctx.request.body.sort,
+        caption:ctx.request.body.caption,
+    };
+    let sql="UPDATE  `column` SET  `title` = '"+postData.title+"', `keyWord` = '"+postData.keyWord+"'," +
+            " `sort` = '"+postData.sort+"', `caption` = '"+postData.caption+"' WHERE `id` = "+postData.id;
+    let result = await mySql.query(sql);
+    if(result.affectedRows===1){//判断是否影响一行
+        ctx.body = {
+            status:1,
+            message:'修改栏目成功'
+        }
+    }else{
+        ctx.body = {
+            status:2,
+            message:'修改栏目失败'
         }
     }
 });
