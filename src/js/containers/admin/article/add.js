@@ -45,17 +45,17 @@ class Add extends React.Component{
                         <ul>
                             <li>
                                 <span>文章标题:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"title")} placeholder="输入文章标题，1-60个字符之间" value={this.props.columnAdd.title} />
+                                <input type="text" onChange={this.inputTitle.bind(this,"title")} placeholder="输入文章标题，1-60个字符之间" value={this.props.articleAdd.title} />
                             </li>
                             <li>
                                 <span>文章关键字:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"keyWord")} placeholder="多个关键字用逗号分割，1-60个字符之间" value={this.props.columnAdd.keyWord} />
+                                <input type="text" onChange={this.inputTitle.bind(this,"keyWord")} placeholder="多个关键字用逗号分割，1-60个字符之间" value={this.props.articleAdd.keyWord} />
                             </li>
                         </ul>
                         <ul>
                             <li>
                                 <span>文章简介:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"caption")} placeholder="输入文章介绍，1-300个字符之间" value={this.props.columnAdd.caption} />
+                                <input type="text" onChange={this.inputTitle.bind(this,"caption")} placeholder="输入文章介绍，1-300个字符之间" value={this.props.articleAdd.caption} />
                             </li>
                             <li>
                                 <span>文章配图:</span>
@@ -72,37 +72,37 @@ class Add extends React.Component{
                         <ul>
                             <li>
                                 <span>所属栏目:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"caption")} placeholder="请输入栏目说明" value={this.props.columnAdd.caption} />
+                                <input type="text" onChange={this.inputTitle.bind(this,"caption")} placeholder="请输入栏目说明" value={this.props.articleAdd.caption} />
                             </li>
                             <li>
                                 <span>文章作者:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"sort")} placeholder="输入作者" value={this.props.columnAdd.sort} />
+                                <input type="text" onChange={this.inputTitle.bind(this,"sort")} placeholder="输入作者" value={this.props.articleAdd.sort} />
                             </li>
                         </ul>
                         <ul>
                             <li>
                                 <span>文章来源:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"caption")} placeholder="输入文章来源" value={this.props.columnAdd.caption} />
+                                <input type="text" onChange={this.inputTitle.bind(this,"caption")} placeholder="输入文章来源" value={this.props.articleAdd.caption} />
                             </li>
                             <li>
                                 <span>文章评论总数:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"sort")} placeholder="数字越小越靠前" value={this.props.columnAdd.sort} />
+                                <input type="text" onChange={this.inputTitle.bind(this,"sort")} placeholder="数字越小越靠前" value={this.props.articleAdd.sort} />
                             </li>
                         </ul>
                         <ul>
                             <li>
                                 <span>文章浏览总数:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"caption")} placeholder="请输入栏目说明" value={this.props.columnAdd.caption} />
+                                <input type="text" onChange={this.inputTitle.bind(this,"caption")} placeholder="请输入栏目说明" value={this.props.articleAdd.caption} />
                             </li>
                             <li>
                                 <span>文章添加时间:</span>
-                                <input readOnly="readonly" type="text" onChange={this.inputTitle.bind(this,"sort")} placeholder="数字越小越靠前" value={this.props.columnAdd.sort} />
+                                <input readOnly="readonly" type="text" onChange={this.inputTitle.bind(this,"sort")} placeholder="数字越小越靠前" value={this.props.articleAdd.sort} />
                             </li>
                         </ul>
                         <ul>
                             <li>
                                 <span>是否推荐:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"caption")} placeholder="请输入栏目说明" value={this.props.columnAdd.caption} />
+                                <input type="text" onChange={this.inputTitle.bind(this,"caption")} placeholder="请输入栏目说明" value={this.props.articleAdd.caption} />
                             </li>
                             <li>
                                 <span>文章添加时间:</span>
@@ -133,8 +133,8 @@ function mapDispatchToProps(dispatch){
         _handle:(options)=>{
             dispatch(actions.handle(options))
         },
-        _addColumn:(options)=>{
-            dispatch(actions.addColumn(options))
+        _addArticle:(options)=>{
+            dispatch(actions.addArticle(options))
         },
         _dialogHandle:(options)=>{
             dispatch(dialogHandle(options))
@@ -142,9 +142,9 @@ function mapDispatchToProps(dispatch){
     }
 }
 
-const columnAdd = connect(
+const articleAdd = connect(
     mapStateToProps,
     mapDispatchToProps
 )(Add);
 
-export default columnAdd;
+export default articleAdd;
