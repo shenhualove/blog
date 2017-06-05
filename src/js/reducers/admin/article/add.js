@@ -16,7 +16,7 @@ const initalize = {
     source:'原创',//来源
     totalReView:0,//评论总数
     totalViews:0,//浏览总数
-    time:moment().format('YY-MM-DD'),//添加时间
+    time:moment().format('YYYY-MM-DD'),//添加时间
     isHot:false,//热门推荐
     isSave:false//防重复提交
 };

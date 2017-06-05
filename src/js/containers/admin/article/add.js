@@ -4,6 +4,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import CenterTopNav from '../../../components/admin/common/centerTopNav';
+import SelectBox from '../../../components/admin/common/selectBox';
 import {dialogHandle} from '../../../actions/admin/dialog';
 import * as actions from '../../../actions/admin/article/add';
 
@@ -15,9 +16,41 @@ class Add extends React.Component{
         this.props._handle(obj);
     }
 
+    //栏目选择事件
+    selectClick(id,val,name){
+        if(id==1){
+            this.props._handle({
+                columnId:val,
+                columnName:name
+            })
+        }else{
+            this.props._handle({
+                isHot:val
+            })
+        }
+    }
+
+    showColumn(){
+        let arr=[{value:"",name:"清选择栏目"}];
+        let temp_arr=[];
+        this.props.articleAdd.columnList.map((val,key)=>{
+            temp_arr.push({value:val.id,name:val.title})
+        });
+        return arr.concat(temp_arr);
+    }
+
+    showHot(){
+        let arr = [{value:true,name:"是"},{value:false,name:"否"}];
+        return arr;
+    }
+
+    upload(){
+
+    }
+
     //保存
     submitClick(){
-        if(this.props.columnAdd.isSave){
+        if(this.props.articleAdd.isSave){
             this.props._dialogHandle({
                 type: "tips",
                 time: 2000,
@@ -26,13 +59,14 @@ class Add extends React.Component{
                 show: true
             })
         }else{
-            this.props._addColumn({
-                title:this.props.columnAdd.title,
-                keyWord:this.props.columnAdd.keyWord,
-                caption:this.props.columnAdd.caption,
-                sort:this.props.columnAdd.sort,
+            this.props._addArticle({
+
             })
         }
+    }
+
+    componentDidMount(){
+        this.props._getColumnAll();
     }
 
     render(){
@@ -57,56 +91,61 @@ class Add extends React.Component{
                                 <span>文章简介:</span>
                                 <input type="text" onChange={this.inputTitle.bind(this,"caption")} placeholder="输入文章介绍，1-300个字符之间" value={this.props.articleAdd.caption} />
                             </li>
+                        </ul>
+                        <ul>
                             <li>
                                 <span>文章配图:</span>
                                 <form id="articleUploadForm"  method="post" enctype="multipart/form-data">
-                                    <input style="display: none" name="fileimg" id="articleImgUpload" placeholder="上传文章缩略图" accept=".png,.gif,.jpg,.jpeg" type="file" />
-                                    <label for="articleImgUpload" class="lable-upload-btn">点击选择图片</label>
+                                    <input style={{display: "none"}} name="fileimg" id="articleImgUpload" placeholder="上传文章缩略图" accept=".png,.gif,.jpg,.jpeg" type="file" />
+                                    <label htmlFor="articleImgUpload" onClick={this.upload.bind(this)} className="lable-upload-btn">点击选择图片</label>
                                 </form>
-                                <input id="articleImgUrl" value="{{item.imgUrl}}" type="hidden" />
                                 <div id="uploadImgWrap">
-                                    <img width="160" height="160" src="/images/upload/admin/{{item.imgUrl}}" />
+                                    <img width="160" height="160" src="/images/upload/admin/" />
                                 </div>
                             </li>
                         </ul>
                         <ul>
                             <li>
                                 <span>所属栏目:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"caption")} placeholder="请输入栏目说明" value={this.props.articleAdd.caption} />
+                                <SelectBox
+                                    callBack={this.selectClick.bind(this,1)}
+                                    value={this.props.articleAdd.columnId}
+                                    list={this.showColumn()}
+                                />
                             </li>
                             <li>
-                                <span>文章作者:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"sort")} placeholder="输入作者" value={this.props.articleAdd.sort} />
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <span>文章来源:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"caption")} placeholder="输入文章来源" value={this.props.articleAdd.caption} />
-                            </li>
-                            <li>
-                                <span>文章评论总数:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"sort")} placeholder="数字越小越靠前" value={this.props.articleAdd.sort} />
+                                <span>作者:</span>
+                                <input type="text" onChange={this.inputTitle.bind(this,"author")} placeholder="输入作者" value={this.props.articleAdd.author} />
                             </li>
                         </ul>
                         <ul>
                             <li>
-                                <span>文章浏览总数:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"caption")} placeholder="请输入栏目说明" value={this.props.articleAdd.caption} />
+                                <span>来源:</span>
+                                <input type="text" onChange={this.inputTitle.bind(this,"source")}  value={this.props.articleAdd.source} />
                             </li>
                             <li>
-                                <span>文章添加时间:</span>
-                                <input readOnly="readonly" type="text" onChange={this.inputTitle.bind(this,"sort")} placeholder="数字越小越靠前" value={this.props.articleAdd.sort} />
+                                <span>评论总数:</span>
+                                <input type="text" onChange={this.inputTitle.bind(this,"totalReView")}  value={this.props.articleAdd.totalReView} />
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <span>浏览总数:</span>
+                                <input type="text" onChange={this.inputTitle.bind(this,"totalViews")}  value={this.props.articleAdd.totalViews} />
+                            </li>
+                            <li>
+                                <span>添加时间:</span>
+                                <input readOnly="readonly" type="text" onChange={this.inputTitle.bind(this,"time")}  value={this.props.articleAdd.time} />
                             </li>
                         </ul>
                         <ul>
                             <li>
                                 <span>是否推荐:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"caption")} placeholder="请输入栏目说明" value={this.props.articleAdd.caption} />
-                            </li>
-                            <li>
-                                <span>文章添加时间:</span>
-
+                                <SelectBox
+                                    callBack={this.selectClick.bind(this,2)}
+                                    value={this.props.articleAdd.isHot}
+                                    list={this.showHot()}
+                                />
                             </li>
                         </ul>
                         <div className="pub-form-btns clearfix">
@@ -135,6 +174,9 @@ function mapDispatchToProps(dispatch){
         },
         _addArticle:(options)=>{
             dispatch(actions.addArticle(options))
+        },
+        _getColumnAll:(options)=>{
+            dispatch(actions.getColumnAll(options))
         },
         _dialogHandle:(options)=>{
             dispatch(dialogHandle(options))

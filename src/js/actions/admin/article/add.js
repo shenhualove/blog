@@ -13,6 +13,25 @@ export function handle(data){
     }
 }
 
+//获取全部栏目
+export function getColumnAll(options){
+    return dispatch=>{
+        Fetch({
+            url:"getColumnAll",
+            success:function(data){
+                if(data.status=="1"){
+                    dispatch(handle({
+                        columnList:data.data,
+                    }));
+                }
+            },
+            errorDialog:function(xhr, errorType, error){
+                ajaxErrorLog(xhr, errorType, error,dispatch);
+            }
+        })
+    }
+}
+
 //添加文章
 export function addArticle(options){
     return dispatch=>{
