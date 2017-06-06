@@ -126,6 +126,42 @@ router.post('/admin/getArticleList', async function (ctx, next) {
     }
 });
 
+//新增文章
+router.post('/admin/addArticle', async function (ctx, next) {
+    let postData={
+        title:ctx.request.body.title,
+        keyWord:ctx.request.body.keyWord,
+        caption:ctx.request.body.caption,
+        imgUrl:ctx.request.body.imgUrl,
+        content:ctx.request.body.content,
+        columnId:ctx.request.body.columnId,
+        columnName:ctx.request.body.columnName,
+        author:ctx.request.body.author,
+        source:ctx.request.body.source,
+        totalReView:ctx.request.body.totalReView,
+        totalViews:ctx.request.body.totalViews,
+        time:ctx.request.body.time,
+        isHot:ctx.request.body.isHot?1:0
+    };
+    let sql="INSERT INTO `article`(`id`, `title`, `keyWord`, `caption`, `imgUrl`,`content`,`columnId`,`columnName`,`author`,`source`,`totalReview`,`totalViews`,`time`, `isHot`) VALUES (NULL,'"+
+             postData.title+"','"+postData.keyWord+"','"+postData.caption+"','"+
+             postData.imgUrl+"','"+postData.content+"','"+postData.columnId+"','"+
+             postData.columnName+"','"+postData.author+"','"+postData.source+"','"+
+             postData.totalReView+"','"+postData.totalViews+"','"+postData.time+"')";
+    let result = await mySql.query(sql);
+    if(result.affectedRows===1){//判断是否影响一行
+        ctx.body = {
+            status:1,
+            message:'添加栏目成功'
+        }
+    }else{
+        ctx.body = {
+            status:2,
+            message:'添加栏目失败'
+        }
+    }
+});
+
 //获取全部栏目
 router.post('/admin/getColumnAll', async function (ctx, next) {
     let sql  = "select * from `column`";

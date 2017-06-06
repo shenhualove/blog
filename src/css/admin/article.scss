@@ -1,0 +1,27 @@
+.lable-upload-btn{
+  background-color: #f2d547;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+}
+
+textarea{
+  width: 300px;
+  height: 100px;
+  border: 1px solid #e3e3e3;
+}
+
+#articleUploadForm{
+  display: inline-block;
+}
+#uploadImgWrap{
+  margin:20px 0 0 80px;
+}
+.articleContent{
+  padding: 0 20px 20px 20px;
+  textarea{
+    width: 800px;
+    height: 500px;
+  }
+}

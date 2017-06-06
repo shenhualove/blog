@@ -30,6 +30,7 @@ class Add extends React.Component{
         }
     }
 
+    //获取栏目列表
     showColumn(){
         let arr=[{value:"",name:"清选择栏目"}];
         let temp_arr=[];
@@ -39,17 +40,26 @@ class Add extends React.Component{
         return arr.concat(temp_arr);
     }
 
+    //是否推荐
     showHot(){
         let arr = [{value:true,name:"是"},{value:false,name:"否"}];
         return arr;
     }
 
+    //上传图片
     upload(){
 
     }
 
     //保存
     submitClick(){
+        let props = this.props.articleAdd;
+        let title = props.title,keyWord = props.keyWord,caption = props.caption,
+            imgUrl = props.imgUrl,content = props.content,columnId = props.columnId,
+            columnName = props.columnName,author = props.author,source = props.source,
+            totalReView = props.totalReView,totalViews = props.totalViews,time = props.time,
+            isHot = props.isHot;
+
         if(this.props.articleAdd.isSave){
             this.props._dialogHandle({
                 type: "tips",
@@ -60,7 +70,19 @@ class Add extends React.Component{
             })
         }else{
             this.props._addArticle({
-
+                title,
+                keyWord,
+                caption,
+                imgUrl,
+                content,
+                columnId,
+                columnName,
+                author,
+                source,
+                totalReView,
+                totalViews,
+                time,
+                isHot
             })
         }
     }
@@ -85,11 +107,19 @@ class Add extends React.Component{
                                 <span>文章关键字:</span>
                                 <input type="text" onChange={this.inputTitle.bind(this,"keyWord")} placeholder="多个关键字用逗号分割，1-60个字符之间" value={this.props.articleAdd.keyWord} />
                             </li>
+                            <li>
+                                <span>所属栏目:</span>
+                                <SelectBox
+                                    callBack={this.selectClick.bind(this,1)}
+                                    value={this.props.articleAdd.columnId}
+                                    list={this.showColumn()}
+                                    />
+                            </li>
                         </ul>
                         <ul>
                             <li>
                                 <span>文章简介:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"caption")} placeholder="输入文章介绍，1-300个字符之间" value={this.props.articleAdd.caption} />
+                                <textarea  onChange={this.inputTitle.bind(this,"caption")} placeholder="输入文章介绍，1-300个字符之间" value={this.props.articleAdd.caption} ></textarea>
                             </li>
                         </ul>
                         <ul>
@@ -99,26 +129,16 @@ class Add extends React.Component{
                                     <input style={{display: "none"}} name="fileimg" id="articleImgUpload" placeholder="上传文章缩略图" accept=".png,.gif,.jpg,.jpeg" type="file" />
                                     <label htmlFor="articleImgUpload" onClick={this.upload.bind(this)} className="lable-upload-btn">点击选择图片</label>
                                 </form>
-                                <div id="uploadImgWrap">
+                                <div id="uploadImgWrap" >
                                     <img width="160" height="160" src="/images/upload/admin/" />
                                 </div>
                             </li>
                         </ul>
                         <ul>
                             <li>
-                                <span>所属栏目:</span>
-                                <SelectBox
-                                    callBack={this.selectClick.bind(this,1)}
-                                    value={this.props.articleAdd.columnId}
-                                    list={this.showColumn()}
-                                />
-                            </li>
-                            <li>
                                 <span>作者:</span>
                                 <input type="text" onChange={this.inputTitle.bind(this,"author")} placeholder="输入作者" value={this.props.articleAdd.author} />
                             </li>
-                        </ul>
-                        <ul>
                             <li>
                                 <span>来源:</span>
                                 <input type="text" onChange={this.inputTitle.bind(this,"source")}  value={this.props.articleAdd.source} />
@@ -135,19 +155,25 @@ class Add extends React.Component{
                             </li>
                             <li>
                                 <span>添加时间:</span>
-                                <input readOnly="readonly" type="text" onChange={this.inputTitle.bind(this,"time")}  value={this.props.articleAdd.time} />
+                                <input  type="text" onChange={this.inputTitle.bind(this,"time")}  value={this.props.articleAdd.time} />
                             </li>
-                        </ul>
-                        <ul>
                             <li>
                                 <span>是否推荐:</span>
                                 <SelectBox
                                     callBack={this.selectClick.bind(this,2)}
                                     value={this.props.articleAdd.isHot}
                                     list={this.showHot()}
-                                />
+                                    />
                             </li>
                         </ul>
+                        <ul>
+                            <li>
+                                <span>文章内容:</span>
+                            </li>
+                        </ul>
+                        <div className="articleContent">
+                           <textarea onChange={this.inputTitle.bind(this,"content")} placeholder="仅限于MARKDOWN语法" value={this.props.articleAdd.content}></textarea>
+                        </div>
                         <div className="pub-form-btns clearfix">
                             <div className="left">
                                 <button onClick={this.submitClick.bind(this)}>添加</button>
