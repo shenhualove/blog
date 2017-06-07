@@ -139,6 +139,43 @@ router.post('/admin/viewArticle', async function (ctx, next) {
     }
 });
 
+//更新文章
+router.post('/admin/updateArticle', async function (ctx, next) {
+    let postData={
+        id:ctx.request.body.id,
+        title:ctx.request.body.title,
+        keyWord:ctx.request.body.keyWord,
+        caption:ctx.request.body.caption,
+        imgUrl:ctx.request.body.imgUrl,
+        content:ctx.request.body.content,
+        columnId:ctx.request.body.columnId,
+        columnName:ctx.request.body.columnName,
+        author:ctx.request.body.author,
+        source:ctx.request.body.source,
+        totalReView:ctx.request.body.totalReView,
+        totalViews:ctx.request.body.totalViews,
+        time:ctx.request.body.time,
+        isHot:ctx.request.body.isHot?1:0
+    };
+    let sql="UPDATE  `article` SET  `title` = '"+postData.title+"', `keyWord` = '"+postData.keyWord+"'," +
+            " `caption` = '"+postData.caption+"', `imgUrl` = '"+postData.imgUrl+"', `content` = '"+postData.content+"',"+
+            " `columnId` = '"+postData.columnId+"', `columnName` = '"+postData.columnName+"', `author` = '"+postData.author+"',"+
+            " `source` = '"+postData.source+"', `totalReview` = '"+postData.totalReView+"', `totalViews` = '"+postData.totalViews+"',"+
+            " `time` = '"+postData.time+"', `isHot` = '"+postData.isHot+"' WHERE `id` = "+postData.id;
+    let result = await mySql.query(sql);
+    if(result.affectedRows===1){//判断是否影响一行
+        ctx.body = {
+            status:1,
+            message:'修改文章成功'
+        }
+    }else{
+        ctx.body = {
+            status:2,
+            message:'修改文章失败'
+        }
+    }
+});
+
 //新增文章
 router.post('/admin/addArticle', async function (ctx, next) {
     let postData={

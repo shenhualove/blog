@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import {connect} from 'react-redux';
+import {browserHistory} from 'react-router';
 import CenterTopNav from '../../../components/admin/common/centerTopNav';
 import Pagination from '../../../components/admin/common/pagination';
 import {dialogHandle} from '../../../actions/admin/dialog';
@@ -98,7 +99,7 @@ class List extends React.Component{
 
     //修改文章
     changeBtn(id){
-
+        browserHistory.push('/admin/article/update/'+id);
     }
 
     //删除文章

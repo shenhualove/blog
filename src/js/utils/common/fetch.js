@@ -26,7 +26,7 @@ const urls={
     getArticleList : "/admin/getArticleList",//获取文章列表
     viewArticle    : "/admin/viewArticle",//查看文章
     addArticle     : "/admin/addArticle",//增加文章
-    updateArticle  : "updateArticle",//更新文章
+    updateArticle  : "/admin/updateArticle",//更新文章
     deleteArticle  : "/admin/deleteArticle",//删除文章
     getLinkList    : "/admin/getLinkList",//获取文章列表
     viewLink       : "/admin/viewLink",//查看文章

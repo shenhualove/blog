@@ -4,6 +4,7 @@
 import Fetch from '../../../utils/common/fetch';
 import {dialogHandle,ajaxErrorLog} from '../dialog';
 import {browserHistory} from 'react-router';
+const moment = require('../../../utils/common/moment');
 
 //触发action
 export function handle(data){
@@ -42,7 +43,21 @@ export function viewArticle(id){
             },
             success:function(data){
                 if(data.status==1){
-
+                    dispatch(handle({
+                        title:data.data.title,
+                        keyWord:data.data.keyWord,
+                        caption:data.data.caption,
+                        imgUrl:data.data.imgUrl,
+                        content:data.data.content,
+                        columnId:data.data.columnId,
+                        columnName:data.data.columnName,
+                        author:data.data.author,
+                        source:data.data.source,
+                        totalReView:data.data.totalReview,
+                        totalViews:data.data.totalViews,
+                        time:moment(data.data.time).format('YYYY-MM-DD'),
+                        isHot:data.data.isHot==0?false:true
+                    }));
                 }else{
                     dispatch(dialogHandle({
                         show:true,

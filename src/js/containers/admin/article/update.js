@@ -8,7 +8,7 @@ import SelectBox from '../../../components/admin/common/selectBox';
 import {dialogHandle} from '../../../actions/admin/dialog';
 import * as actions from '../../../actions/admin/article/update';
 
-class Add extends React.Component{
+class Update extends React.Component{
     //监听输入事件
     inputTitle(key,e){
         let obj = {};
@@ -32,12 +32,11 @@ class Add extends React.Component{
 
     //获取栏目列表
     showColumn(){
-        let arr=[{value:"",name:"清选择栏目"}];
         let temp_arr=[];
-        this.props.articleAdd.columnList.map((val,key)=>{
+        this.props.articleUpdate.columnList.map((val,key)=>{
             temp_arr.push({value:val.id,name:val.title})
         });
-        return arr.concat(temp_arr);
+        return temp_arr;
     }
 
     //是否推荐
@@ -53,12 +52,12 @@ class Add extends React.Component{
 
     //保存
     submitClick(){
-        let props = this.props.articleAdd;
+        let props = this.props.articleUpdate;
         let title = props.title,keyWord = props.keyWord,caption = props.caption,
             imgUrl = props.imgUrl,content = props.content,columnId = props.columnId,
             columnName = props.columnName,author = props.author,source = props.source,
             totalReView = props.totalReView,totalViews = props.totalViews,time = props.time,
-            isHot = props.isHot;
+            isHot = props.isHot,id = this.props.params.id;
 
         if(this.props.articleAdd.isSave){
             this.props._dialogHandle({
@@ -69,7 +68,8 @@ class Add extends React.Component{
                 show: true
             })
         }else{
-            this.props._addArticle({
+            this.props._updateArticle({
+                id,
                 title,
                 keyWord,
                 caption,
@@ -89,29 +89,30 @@ class Add extends React.Component{
 
     componentDidMount(){
         this.props._getColumnAll();
+        this.props._viewArticle(this.props.params.id);
     }
 
     render(){
         return(
             <div className="height100p">
-                <CenterTopNav title="文章添加" parentList={[{name:"文章管理"}]} />
+                <CenterTopNav title="文章修改" parentList={[{name:"文章管理"}]} />
                 <div className="height100pY plr26">
                     {/*form content begin*/}
                     <div className="pub-form-top clearfix">
                         <ul>
                             <li>
                                 <span>文章标题:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"title")} placeholder="输入文章标题，1-60个字符之间" value={this.props.articleAdd.title} />
+                                <input type="text" onChange={this.inputTitle.bind(this,"title")} placeholder="输入文章标题，1-60个字符之间" value={this.props.articleUpdate.title} />
                             </li>
                             <li>
                                 <span>文章关键字:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"keyWord")} placeholder="多个关键字用逗号分割，1-60个字符之间" value={this.props.articleAdd.keyWord} />
+                                <input type="text" onChange={this.inputTitle.bind(this,"keyWord")} placeholder="多个关键字用逗号分割，1-60个字符之间" value={this.props.articleUpdate.keyWord} />
                             </li>
                             <li>
                                 <span>所属栏目:</span>
                                 <SelectBox
                                     callBack={this.selectClick.bind(this,1)}
-                                    value={this.props.articleAdd.columnId}
+                                    value={this.props.articleUpdate.columnId}
                                     list={this.showColumn()}
                                     />
                             </li>
@@ -119,7 +120,7 @@ class Add extends React.Component{
                         <ul>
                             <li>
                                 <span>文章简介:</span>
-                                <textarea  onChange={this.inputTitle.bind(this,"caption")} placeholder="输入文章介绍，1-300个字符之间" value={this.props.articleAdd.caption} ></textarea>
+                                <textarea  onChange={this.inputTitle.bind(this,"caption")} placeholder="输入文章介绍，1-300个字符之间" value={this.props.articleUpdate.caption} ></textarea>
                             </li>
                         </ul>
                         <ul>
@@ -137,31 +138,31 @@ class Add extends React.Component{
                         <ul>
                             <li>
                                 <span>作者:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"author")} placeholder="输入作者" value={this.props.articleAdd.author} />
+                                <input type="text" onChange={this.inputTitle.bind(this,"author")} placeholder="输入作者" value={this.props.articleUpdate.author} />
                             </li>
                             <li>
                                 <span>来源:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"source")}  value={this.props.articleAdd.source} />
+                                <input type="text" onChange={this.inputTitle.bind(this,"source")}  value={this.props.articleUpdate.source} />
                             </li>
                             <li>
                                 <span>评论总数:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"totalReView")}  value={this.props.articleAdd.totalReView} />
+                                <input type="text" onChange={this.inputTitle.bind(this,"totalReView")}  value={this.props.articleUpdate.totalReView} />
                             </li>
                         </ul>
                         <ul>
                             <li>
                                 <span>浏览总数:</span>
-                                <input type="text" onChange={this.inputTitle.bind(this,"totalViews")}  value={this.props.articleAdd.totalViews} />
+                                <input type="text" onChange={this.inputTitle.bind(this,"totalViews")}  value={this.props.articleUpdate.totalViews} />
                             </li>
                             <li>
                                 <span>添加时间:</span>
-                                <input  type="text" onChange={this.inputTitle.bind(this,"time")}  value={this.props.articleAdd.time} />
+                                <input  type="text" onChange={this.inputTitle.bind(this,"time")}  value={this.props.articleUpdate.time} />
                             </li>
                             <li>
                                 <span>是否推荐:</span>
                                 <SelectBox
                                     callBack={this.selectClick.bind(this,2)}
-                                    value={this.props.articleAdd.isHot}
+                                    value={this.props.articleUpdate.isHot}
                                     list={this.showHot()}
                                     />
                             </li>
@@ -172,7 +173,7 @@ class Add extends React.Component{
                             </li>
                         </ul>
                         <div className="articleContent">
-                            <textarea onChange={this.inputTitle.bind(this,"content")} placeholder="仅限于MARKDOWN语法" value={this.props.articleAdd.content}></textarea>
+                            <textarea onChange={this.inputTitle.bind(this,"content")} placeholder="仅限于MARKDOWN语法" value={this.props.articleUpdate.content}></textarea>
                         </div>
                         <div className="pub-form-btns clearfix">
                             <div className="left">
@@ -216,6 +217,6 @@ function mapDispatchToProps(dispatch){
 const articleUpdate = connect(
     mapStateToProps,
     mapDispatchToProps
-)(Add);
+)(Update);
 
 export default articleUpdate;
