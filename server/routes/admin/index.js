@@ -1,4 +1,5 @@
 var router = require('koa-router')();
+var moment = require('moment');
 var mySql  = require('../../utils/mysql');
 
 router.get('/admin', async function (ctx, next) {
@@ -25,7 +26,7 @@ router.post('/admin/getColumnList', async function (ctx, next) {
         status:1,
         data:list,
         count:count[0].total,
-        message:'登录成功'
+        message:'查询成功'
     }
 });
 
@@ -126,6 +127,18 @@ router.post('/admin/getArticleList', async function (ctx, next) {
     }
 });
 
+//查询文章
+router.post('/admin/viewArticle', async function (ctx, next) {
+    let id   = ctx.request.body.id;
+    let sql  = "select * from `article` where  `id` = "+id;
+    let list = await mySql.query(sql);
+    ctx.body = {
+        status:1,
+        data:list[0],
+        message:'查询成功'
+    }
+});
+
 //新增文章
 router.post('/admin/addArticle', async function (ctx, next) {
     let postData={
@@ -147,17 +160,18 @@ router.post('/admin/addArticle', async function (ctx, next) {
              postData.title+"','"+postData.keyWord+"','"+postData.caption+"','"+
              postData.imgUrl+"','"+postData.content+"','"+postData.columnId+"','"+
              postData.columnName+"','"+postData.author+"','"+postData.source+"','"+
-             postData.totalReView+"','"+postData.totalViews+"','"+postData.time+"')";
+             postData.totalReView+"','"+postData.totalViews+"','"+postData.time+"','"+
+             postData.isHot+"')";
     let result = await mySql.query(sql);
     if(result.affectedRows===1){//判断是否影响一行
         ctx.body = {
             status:1,
-            message:'添加栏目成功'
+            message:'添加文章成功'
         }
     }else{
         ctx.body = {
             status:2,
-            message:'添加栏目失败'
+            message:'添加文章失败'
         }
     }
 });

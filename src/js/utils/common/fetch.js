@@ -24,10 +24,12 @@ const urls={
     updateColumn   : "/admin/updateColumn",//更新栏目
     deleteColumn   : "/admin/deleteColumn",//删除栏目
     getArticleList : "/admin/getArticleList",//获取文章列表
+    viewArticle    : "/admin/viewArticle",//查看文章
     addArticle     : "/admin/addArticle",//增加文章
     updateArticle  : "updateArticle",//更新文章
     deleteArticle  : "/admin/deleteArticle",//删除文章
     getLinkList    : "/admin/getLinkList",//获取文章列表
+    viewLink       : "/admin/viewLink",//查看文章
     addLink        : "/admin/addLink",//增加链接
     updateLink     : "/admin/updateLink",//更新链接
     deleteLink     : "/admin/deleteLink",//删除文章

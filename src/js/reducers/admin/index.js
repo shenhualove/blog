@@ -7,6 +7,7 @@ import columnAdd from './column/add';
 import columnUpdate from './column/update';
 import articleList from './article/list';
 import articleAdd from './article/add';
+import articleUpdate from './article/update';
 import linkList from './link/list';
 
 
@@ -18,6 +19,7 @@ const admin=combineReducers({
     columnUpdate,
     articleList,
     articleAdd,
+    articleUpdate,
     linkList,
     routing: routerReducer,
 });
