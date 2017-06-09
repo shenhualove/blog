@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import CenterTopNav from '../../../components/admin/common/centerTopNav';
 import Pagination from '../../../components/admin/common/pagination';
 import {dialogHandle} from '../../../actions/admin/dialog';
+import {browserHistory} from 'react-router';
 import SelectBox from '../../../components/admin/common/selectBox';
 import Table from '../../../components/admin/common/table';
 import * as actions from '../../../actions/admin/link/list';
@@ -89,7 +90,7 @@ class List extends React.Component{
 
     //修改文章
     changeBtn(id){
-
+        browserHistory.pushState({name:this.props.linkList.columnId},'/admin/link/update/'+id);
     }
 
     //删除文章

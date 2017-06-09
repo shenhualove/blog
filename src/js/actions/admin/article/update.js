@@ -34,12 +34,13 @@ export function getColumnAll(options){
 }
 
 //查看文章
-export function viewArticle(id){
+export function viewArticle(id,name){
     return dispatch=>{
         Fetch({
             url:"viewArticle",
             data:{
-                id
+                id,
+                name
             },
             success:function(data){
                 if(data.status==1){

@@ -262,6 +262,67 @@ router.post('/admin/getLinkList', async function (ctx, next) {
     }
 });
 
+//新增链接
+router.post('/admin/addLink', async function (ctx, next) {
+    let postData={
+        name:ctx.request.body.columnId==1?'link':'study',
+        title:ctx.request.body.title,
+        url:ctx.request.body.url,
+        sort:ctx.request.body.sort,
+    };
+    let sql="INSERT INTO `"+postData.name+"`(`id`, `title`, `url`, `sort`, `creatTime`) VALUES (NULL,'"+postData.title+"','"+postData.url+"','"+postData.sort+"',CURRENT_TIMESTAMP)";
+    let result = await mySql.query(sql);
+    if(result.affectedRows===1){//判断是否影响一行
+        ctx.body = {
+            status:1,
+            message:'添加链接成功'
+        }
+    }else{
+        ctx.body = {
+            status:2,
+            message:'添加链接失败'
+        }
+    }
+});
+
+//查询链接
+router.post('/admin/viewLink', async function (ctx, next) {
+    let id   = ctx.request.body.id;
+    let name = ctx.request.body.name==1?'link':'study';
+    let sql  = "select * from `"+name+"` where  `id` = "+id;
+    let list = await mySql.query(sql);
+    ctx.body = {
+        status:1,
+        data:list[0],
+        message:'查询成功'
+    }
+});
+
+//更新链接
+router.post('/admin/updateLink', async function (ctx, next) {
+    let postData={
+        id:ctx.request.body.id,
+        title:ctx.request.body.title,
+        url:ctx.request.body.url,
+        sort:ctx.request.body.sort,
+        name:ctx.request.body.columnId==1?'link':'study'
+    };
+    let sql="UPDATE  `"+postData.name+"` SET  `title` = '"+postData.title+"', `url` = '"+postData.url+"'," +
+        " `sort` = '"+postData.sort+"' WHERE `id` = "+postData.id;
+    let result = await mySql.query(sql);
+    if(result.affectedRows===1){//判断是否影响一行
+        ctx.body = {
+            status:1,
+            message:'修改链接成功'
+        }
+    }else{
+        ctx.body = {
+            status:2,
+            message:'修改链接失败'
+        }
+    }
+});
+
 //删除链接
 router.post('/admin/deleteLink', async function (ctx, next) {
     let id   = ctx.request.body.id;

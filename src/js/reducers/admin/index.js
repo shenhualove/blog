@@ -9,7 +9,8 @@ import articleList from './article/list';
 import articleAdd from './article/add';
 import articleUpdate from './article/update';
 import linkList from './link/list';
-
+import linkAdd from './link/add';
+import linkUpdate from './link/update';
 
 const admin=combineReducers({
     login,
@@ -21,6 +22,8 @@ const admin=combineReducers({
     articleAdd,
     articleUpdate,
     linkList,
+    linkAdd,
+    linkUpdate,
     routing: routerReducer,
 });
 
