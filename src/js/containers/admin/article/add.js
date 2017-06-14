@@ -5,6 +5,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import CenterTopNav from '../../../components/admin/common/centerTopNav';
 import SelectBox from '../../../components/admin/common/selectBox';
+import Upload from '../../../containers/admin/public/upload';
 import {dialogHandle} from '../../../actions/admin/dialog';
 import * as actions from '../../../actions/admin/article/add';
 
@@ -125,13 +126,7 @@ class Add extends React.Component{
                         <ul>
                             <li>
                                 <span>文章配图:</span>
-                                <form id="articleUploadForm"  method="post" enctype="multipart/form-data">
-                                    <input style={{display: "none"}} name="fileimg" id="articleImgUpload" placeholder="上传文章缩略图" accept=".png,.gif,.jpg,.jpeg" type="file" />
-                                    <label htmlFor="articleImgUpload" onClick={this.upload.bind(this)} className="lable-upload-btn">点击选择图片</label>
-                                </form>
-                                <div id="uploadImgWrap" >
-                                    <img width="160" height="160" src="/images/upload/admin/" />
-                                </div>
+                                <Upload />
                             </li>
                         </ul>
                         <ul>
@@ -169,6 +164,7 @@ class Add extends React.Component{
                         <ul>
                             <li>
                                 <span>文章内容:</span>
+
                             </li>
                         </ul>
                         <div className="articleContent">
@@ -187,6 +183,7 @@ class Add extends React.Component{
         )
     }
 }
+
 
 function mapStateToProps(state){
     return state;
