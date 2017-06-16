@@ -1,6 +1,9 @@
 var router = require('koa-router')();
 var moment = require('moment');
 var mySql  = require('../../utils/mysql');
+var multer = require('koa-multer');
+var upload = multer({ dest: 'uploads/' });
+
 
 router.get('/admin', async function (ctx, next) {
     await ctx.render('admin');
@@ -15,6 +18,11 @@ router.post('/admin/accountLogin', async function (ctx, next) {
         },
         message:'登录成功'
     }
+});
+
+//上传图片
+router.post('/admin/upload',upload.single('file'),async function (ctx, next) {
+    console.log(ctx.req.body.file);
 });
 
 //获取栏目列表

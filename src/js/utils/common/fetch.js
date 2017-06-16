@@ -44,7 +44,7 @@ function Fetch(options){
         headers: {
             "Content-Type":options.contentType?options.contentType:"application/x-www-form-urlencoded"
         },//请求头部格式
-        body:options.data?sortKey(options.data):'' //发送数据
+        body:options.data?sortKey(options.data,options.contentType):'' //发送数据
     }
 
     //初始化请求
@@ -86,10 +86,15 @@ function Fetch(options){
 }
 
 //对象转换为key=value&key=value
-function sortKey(data){
+function sortKey(data,type){
     let tempData='';
     for(let key in data){
-        tempData+=key+'='+data[key]+'&';
+        //上传文件无需KEY
+        if(type === "multipart/form-data"){
+            tempData=data[key];
+        } else {
+            tempData+=key+'='+data[key]+'&';
+        }
     }
     return tempData;
 }

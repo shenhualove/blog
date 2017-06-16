@@ -27,7 +27,11 @@ class Main extends React.Component{
     }
 
     upload(){
-
+       let data = new FormData();
+       data.append('file',this.props.upload.viewUrl);
+       this.props._uploadFile({
+            data
+       })
     }
 
     render(){

@@ -8,13 +8,20 @@
 .upload-file-wrap{
   display: inline-block;
 }
-#uploadImgOk span {
-  cursor: pointer;
-  display: inline-block;
-  text-align: center;
-  margin-right: 20px;
-  background: #f2d547;
-  border-radius: 5px;
-  padding: 6px;
-  font-size: 14px;
+#uploadImgOk{
+  margin-top:20px;
+  span {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    margin-right: 20px;
+    background: #f2d547;
+    border-radius: 5px;
+    padding: 6px;
+    font-size: 14px;
+    height: auto;
+    width: 68px;
+    line-height: 24px;
+  }
 }
+
