@@ -2,7 +2,10 @@ var router = require('koa-router')();
 var moment = require('moment');
 var mySql  = require('../../utils/mysql');
 var multer = require('koa-multer');
-var upload = multer({ dest: 'uploads/' });
+var upload = multer({ dest: 'temp_upload/' });
+var fs     = require('fs');
+var path   = require('path');
+var md5    = require('md5');
 
 
 router.get('/admin', async function (ctx, next) {
@@ -11,6 +14,7 @@ router.get('/admin', async function (ctx, next) {
 
 //登录接口
 router.post('/admin/accountLogin', async function (ctx, next) {
+    ctx.session.login = "神话";
     ctx.body = {
         status:1,
         data:{
@@ -22,11 +26,42 @@ router.post('/admin/accountLogin', async function (ctx, next) {
 
 //上传图片
 router.post('/admin/upload',upload.single('file'),async function (ctx, next) {
-    console.log(ctx.req.body.file);
+    let fileName = md5(ctx.req.file.originalname+ctx.req.file.size)+'.'+ctx.req.file.mimetype.split('/')[1];
+    let _src     = path.join(__dirname,'../../',ctx.req.file.path);
+    let _dst     = path.join(__dirname,'../../','uploads/'+fileName);
+    try {
+        // 创建读取流
+        let readable = fs.createReadStream(_src);
+        // 创建写入流
+        let writable = fs.createWriteStream(_dst);
+        // 通过管道来传输流
+        readable.pipe(writable);
+        //返回数据
+        ctx.body = {
+            status:1,
+            data:{
+                fileName:fileName
+            },
+            message:"上传成功"
+        }
+    } catch (e) {
+        console.log(e);
+        //返回数据
+        ctx.body = {
+            status:2,
+            data:{
+                fileName:""
+            },
+            message:"上传失败"
+        }
+    }
+    //删除临时文件
+    fs.unlink(ctx.req.file.path);
 });
 
 //获取栏目列表
 router.post('/admin/getColumnList', async function (ctx, next) {
+    console.log(ctx.session.login)
     let sql  = "select * from `column` order by  `sort` desc";
     let list = await mySql.query(sql);
     let count = await mySql.query("select count(id) as total from `column`");

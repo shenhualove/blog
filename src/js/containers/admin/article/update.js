@@ -5,6 +5,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import CenterTopNav from '../../../components/admin/common/centerTopNav';
 import SelectBox from '../../../components/admin/common/selectBox';
+import Upload from '../../../containers/admin/public/upload';
 import {dialogHandle} from '../../../actions/admin/dialog';
 import * as actions from '../../../actions/admin/article/update';
 
@@ -46,8 +47,10 @@ class Update extends React.Component{
     }
 
     //上传图片
-    upload(){
-
+    upload(url){
+        this.props._handle({
+            imgUrl:url
+        })
     }
 
     //保存
@@ -126,13 +129,7 @@ class Update extends React.Component{
                         <ul>
                             <li>
                                 <span>文章配图:</span>
-                                <form id="articleUploadForm"  method="post" enctype="multipart/form-data">
-                                    <input style={{display: "none"}} name="fileimg" id="articleImgUpload" placeholder="上传文章缩略图" accept=".png,.gif,.jpg,.jpeg" type="file" />
-                                    <label htmlFor="articleImgUpload" onClick={this.upload.bind(this)} className="lable-upload-btn">点击选择图片</label>
-                                </form>
-                                <div id="uploadImgWrap" >
-                                    <img width="160" height="160" src="/images/upload/admin/" />
-                                </div>
+                                <Upload uploadCallBack={this.upload.bind(this)} />
                             </li>
                         </ul>
                         <ul>

@@ -41,7 +41,7 @@ function Fetch(options){
     //请求头部参数
     let sendHeader={
         method: options.type?options.type:"POST",//发送方式
-        headers: {
+        headers:options.contentType === "multipart/form-data"?{}:{
             "Content-Type":options.contentType?options.contentType:"application/x-www-form-urlencoded"
         },//请求头部格式
         body:options.data?sortKey(options.data,options.contentType):'' //发送数据
