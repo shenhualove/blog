@@ -2,7 +2,7 @@
  * Created by apple on 17/6/20.
  */
 const Redis = require("ioredis");
-const Store = require("koa-session2/libs/store");
+const { Store } = require("koa-session2");
 
 class RedisStore extends Store {
     constructor() {
@@ -10,23 +10,22 @@ class RedisStore extends Store {
         this.redis = new Redis();
     }
 
-    get(sid) {
-        return this.redis.get(`SESSION:${sid}`).then(data => JSON.parse(data));
+    async get(sid) {
+        let data = await this.redis.get(`SESSION:${sid}`);
+        return JSON.parse(data);
     }
 
-    set(session, opts) {
-        if(!opts.sid) {
-            opts.sid = this.getID(24);
-        }
-
-        return this.redis.set(`SESSION:${opts.sid}`, JSON.stringify(session)).then(() => {
-            return opts.sid
-        });
+    async set(session, { sid =  this.getID(24), maxAge = 1000000 } = {}) {
+        try {
+            // Use redis set EX to automatically drop expired sessions
+            await this.redis.set(`SESSION:${sid}`, JSON.stringify(session), 'EX', maxAge / 1000);
+        } catch (e) {}
+        return sid;
     }
 
-    destroy(sid) {
-        return this.redis.del(`SESSION:${sid}`);
+    async destroy(sid) {
+        return await this.redis.del(`SESSION:${sid}`);
     }
 }
 
-module.exports=RedisStore;
+module.exports = RedisStore;

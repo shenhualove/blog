@@ -14,13 +14,32 @@ router.get('/admin', async function (ctx, next) {
 
 //登录接口
 router.post('/admin/accountLogin', async function (ctx, next) {
-    ctx.session.login = "神话";
+    let sql  = "select * from `admin` where userName = '"+ctx.request.body.accountName+"' and passWord = '"+md5(ctx.request.body.password)+"' ";
+    let list = await mySql.query(sql);
+    if(list.length>0){
+        ctx.session.login = "神话";
+        ctx.body = {
+            status:1,
+            data:{
+                userName:"神话"
+            },
+            message:'登录成功'
+        }
+    }else{
+        ctx.body = {
+            status:2,
+            data:{},
+            message:'请输入正确的用户名或密码'
+        }
+    }
+
+});
+
+//退出登录
+router.post('/admin/loginOut', async function (ctx, next) {
     ctx.body = {
         status:1,
-        data:{
-         userName:"神话"
-        },
-        message:'登录成功'
+        message:'退出登录成功'
     }
 });
 

@@ -4,8 +4,11 @@
  * 顶部菜单模块
  */
 import {dialogHandle,ajaxErrorLog} from './dialog';
+import {loginHandle} from './index';
+import Fetch from '../../utils/common/fetch';
+import {browserHistory} from 'react-router';
 //顶部TOP模块事件处理
-function topHandle(options){
+export function topHandle(options){
     return {
         type:"TOP_HANDLE",
         options
@@ -13,14 +16,18 @@ function topHandle(options){
 }
 
 //退出登录
-function logOut(options){
+export function logOut(options){
     return dispatch=>{
-        $.XlAjax({
-            url:"loginout",
+        Fetch({
+            url:"loginOut",
             success:function(data){
-                if(data.status=="0000"){
+                if(data.status=="1"){
+                    dispatch(loginHandle({
+                       account:{},
+                       isLogin:false
+                    }));
                     sessionStorage.clear();
-                    window.location.href = "/";
+                    browserHistory.push("/admin");
                 }
             },
             errorDialog:function(xhr, errorType, error){
@@ -29,49 +36,3 @@ function logOut(options){
         })
     }
 }
-
-//重设密码
-function setPassWord(options){
-    var _this = this;
-    return dispatch=>{
-        $.XlAjax({
-            url:"resetPwd",
-            data:{
-                oldPwd:$("#oldPsd").val(),
-                newPwd:$("#confirmPsd").val()
-            },
-            success:function(data){
-                if(data.status=="0000"){//校验手机号码成功
-                    dispatch(dialogHandle({
-                        show:true,
-                        type:'tips',
-                        content:"密码修改成功，2秒后自动跳转到登录页面",
-                        time:2000,
-                        success:function(){
-                            return true;
-                        },
-                        hide:function(){
-                            sessionStorage.clear();
-                            options.callBack();
-                            window.location.href='/';
-                        }
-                    }));
-                }else if(data.status=="9999"){
-                    options.errMesg();
-                }else{
-                    dispatch(dialogHandle({
-                        show:true,
-                        type:'tips',
-                        tipsType:"warning",
-                        content:data.message
-                    }));
-                }
-            },
-            errorDialog:function(xhr, errorType, error){
-                ajaxErrorLog(xhr, errorType, error,dispatch);
-            }
-        });
-    }
-}
-
-export   {topHandle,logOut,setPassWord};

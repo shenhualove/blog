@@ -17,6 +17,7 @@ const urls={
 
     /*后台模块开始*/
     accountLogin   : "/admin/accountLogin",//登录
+    loginOut       : "/admin/loginOut",//登出
     getColumnList  : "/admin/getColumnList",//获取栏目列表
     getColumnAll   : "/admin/getColumnAll",//获取所有栏目
     getColumn      : "/admin/getColumn",//获取栏目详情
