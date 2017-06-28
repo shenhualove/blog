@@ -17,6 +17,7 @@ const urls={
 
     /*后台模块开始*/
     accountLogin   : "/admin/accountLogin",//登录
+    loginOut       : "/admin/loginOut",//登出
     getColumnList  : "/admin/getColumnList",//获取栏目列表
     getColumnAll   : "/admin/getColumnAll",//获取所有栏目
     getColumn      : "/admin/getColumn",//获取栏目详情
@@ -42,7 +43,7 @@ function Fetch(options){
     //请求头部参数
     let sendHeader={
         method: options.type?options.type:"POST",//发送方式
-        headers:options.contentType=="multipart/form-data"?{}:{
+        headers:options.contentType === "multipart/form-data"?{}:{
             "Content-Type":options.contentType?options.contentType:"application/x-www-form-urlencoded"
         },//请求头部格式
         body:options.data?sortKey(options.data,options.contentType):'' //发送数据
