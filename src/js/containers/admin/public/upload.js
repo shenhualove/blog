@@ -11,6 +11,7 @@ class Main extends React.Component{
 
     showUpload(e){
        if(e.target.files.length>0){
+           console.log(e.target.value)
            var file = e.target.files[0];
            var reader = new FileReader();
            reader.onload=(ev)=>{
@@ -27,10 +28,14 @@ class Main extends React.Component{
     }
 
     upload(){
+       if(this.props.upload.load){
+           return;
+       }
        let data = new FormData();
-       data.append('file',this.props.upload.viewUrl);
+       data.append('file',this.refs.fileUpload.files[0]);
        this.props._uploadFile({
-            data
+            data,
+            success:this.props.uploadCallBack
        })
     }
 
@@ -38,7 +43,7 @@ class Main extends React.Component{
         return(
            <div className="upload-file-wrap">
                <form id="articleUploadForm"  method="post" enctype="multipart/form-data">
-                   <input style={{display: "none"}} onChange={this.showUpload.bind(this)} name="fileimg" id="articleImgUpload" placeholder="上传文章缩略图" accept=".png,.gif,.jpg,.jpeg" type="file" />
+                   <input style={{display: "none"}} ref="fileUpload" onChange={this.showUpload.bind(this)} name="fileimg" id="articleImgUpload" placeholder="上传文章缩略图" accept=".png,.gif,.jpg,.jpeg" type="file" />
                    <label htmlFor="articleImgUpload"  className="lable-upload-btn">点击选择图片</label>
                </form>
                <div id="uploadImgWrap" >

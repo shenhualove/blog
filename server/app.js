@@ -5,6 +5,11 @@ const json = require('koa-json');
 const onerror = require('koa-onerror');
 const bodyparser = require('koa-bodyparser')();
 const logger = require('koa-logger');
+const session = require("koa-session2");
+const RedisStore = require("./utils/store");
+
+
+console.log(RedisStore)
 
 const index = require('./routes/user/index');
 const admin = require('./routes/admin/index');
@@ -20,6 +25,13 @@ app.use(require('koa-static')(__dirname + '/views'));
 
 app.use(views(__dirname + '/views', {
   extension:'html'
+}));
+
+//设置SESSION
+app.use(session({
+  key: "SESSIONID",   //default "koa:sess"
+  store:new RedisStore(),
+  maxAge: 50000  //设置session超时时间
 }));
 
 // logger

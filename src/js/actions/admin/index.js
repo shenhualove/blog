@@ -3,6 +3,7 @@
  */
 import Fetch from '../../utils/common/fetch';
 import {handle} from '../common';
+import {browserHistory} from 'react-router';
 import {dialogHandle,ajaxErrorLog} from './dialog';
 
 const handleText="LOGIN_HANDLE";
@@ -30,6 +31,7 @@ export function accountLogin(options){
                         loginHash:true
                     }));
                     dispatch(handle("LOGIN_SUCCESS",data.data));
+                    browserHistory.push("/admin/article/list");
                 }else{
                     dispatch(handle(handleText,{
                         errorMsg:data.message,

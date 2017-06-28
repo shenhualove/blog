@@ -48,8 +48,10 @@ class Add extends React.Component{
     }
 
     //上传图片
-    upload(){
-
+    upload(url){
+        this.props._handle({
+            imgUrl:url
+        })
     }
 
     //保存
@@ -126,7 +128,7 @@ class Add extends React.Component{
                         <ul>
                             <li>
                                 <span>文章配图:</span>
-                                <Upload />
+                                <Upload uploadCallBack={this.upload.bind(this)} />
                             </li>
                         </ul>
                         <ul>
