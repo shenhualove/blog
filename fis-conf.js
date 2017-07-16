@@ -119,9 +119,9 @@ fis.media('debug').match('/src/**.{css,scss,js}', {
 fis.media('upload').match('/{src,node_modules}/**', {
     domain:"//cdn.shxiongrui.com",
     deploy: fis.plugin('qiniu', {
-        accessKey: 'wMaCsHD-91Sla0DJVaQ3wV9UZGYVmL6xA3mIrdep',  //Your qiniu Access Key
-        secretKey: 'iVQQp5amRiMpugLpY52v2sY8v44jncg7vOo4mNh3',  //Your qiniu Secret Key
-        bucket: 'shenhua'//qiniu dist
+        accessKey: '',  //Your qiniu Access Key
+        secretKey: '',  //Your qiniu Secret Key
+        bucket: ''//qiniu dist
     })
 })//上传模式
 
